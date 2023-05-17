@@ -7,6 +7,16 @@ class TextStyler {
         name: 'CustomText',
         builder: (context) => Text(context.knobs.text(initialValue: "Lorem ipsum dolor sit amet",label: "label",),
         style: TextStyle(
+          fontWeight: context.knobs.options(label: "fontWeight", 
+          options:const [
+            Option(label: "100", value: FontWeight.w100),
+            Option(label: "200", value: FontWeight.w200),
+            Option(label: "300", value: FontWeight.w300),
+            Option(label: "400", value: FontWeight.w400),
+            Option(label: "500", value: FontWeight.w500),
+            Option(label: "600", value: FontWeight.w600),
+            Option(label: "700", value: FontWeight.w700),
+          ],description: "merubah ketebalan font"),
           color: context.knobs.options(
             label: "fontColor",
             description: "Mengganti warna pada font",
