@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widget_book/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 class ButtonStyler {
@@ -14,12 +15,7 @@ class ButtonStyler {
               backgroundColor: MaterialStateProperty.all(context.knobs.options(
                 label: "bgColor",
                 description: "Mengganti warna pada background button",
-                options: const [
-                  Option<Color>(label: "#0D4491",value: Color(0xFF0D4491)),
-                  Option<Color>(label: "#F64A33",value: Color(0XFFF64A33)),
-                  Option<Color>(label: "#439677",value: Color(0XFF439677)),
-                  Option<Color>(label: "#FFFFFF",value: Color(0XFFFFFFFF)),
-                ]
+                options: colorOption
               )
             ),
           ),
@@ -28,8 +24,8 @@ class ButtonStyler {
               style: TextStyle(color: context.knobs.options(
                   label: "fontColor",
                   description: "Mengganti warna pada font button",
-                  options: const [
-                    Option<Color>(label: "#FFFFFF",value: Color(0XFFFFFFFF)),
+                  options: const[
+                    Option<Color>(label: "#FFFFFF",value: Color(0xFFFFFFFF)),
                     Option<Color>(label: "#0D4491",value: Color(0xFF0D4491)),
                     Option<Color>(label: "#F64A33",value: Color(0XFFF64A33)),
                     Option<Color>(label: "#439677",value: Color(0XFF439677)),
@@ -53,24 +49,16 @@ class ButtonStyler {
                   color: context.knobs.options(
                   label: "secondaryColor",
                   description: "Mengganti warna pada border button",
-                  options: const [
-                    Option<Color>(label: "#0D4491",value: Color(0xFF0D4491)),
-                    Option<Color>(label: "#F64A33",value: Color(0XFFF64A33)),
-                    Option<Color>(label: "#439677",value: Color(0XFF439677)),
-                  ]
+                  options: colorOption
                 ), width: 1.0, style: BorderStyle.solid),
             ),
           ),
           onPressed: () {},
           child: Text(context.knobs.text(initialValue: "Example Button",label: "label",description: "Berfungsi untuk membuat label pada tombol"),
               style: TextStyle(color: context.knobs.options(
-                  label: "fontColor",
+                  label: "secondaryColor",
                   description: "Mengganti warna pada font button",
-                  options: const [
-                    Option<Color>(label: "#0D4491",value: Color(0xFF0D4491)),
-                    Option<Color>(label: "#F64A33",value: Color(0XFFF64A33)),
-                    Option<Color>(label: "#439677",value: Color(0XFF439677)),
-                  ]
+                  options: colorOption
                 )
               )
             ),

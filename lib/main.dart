@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widget_book/TextField/text_field_book.dart';
 import 'package:widget_book/button/button_book.dart';
+import 'package:widget_book/popup/popup_version.dart';
 import 'package:widget_book/text/text_book.dart';
 import 'package:widgetbook/widgetbook.dart';
 
@@ -43,7 +44,8 @@ class HotreloadWidgetbook extends StatelessWidget {
             WidgetbookComponent(
               name: 'Text',
               useCases: [
-                TextStyler().text()
+                TextStyler().text(),
+                TextStyler().textRow()
               ],
             ),
             WidgetbookComponent(
@@ -57,6 +59,7 @@ class HotreloadWidgetbook extends StatelessWidget {
             WidgetbookComponent(
               name: 'Popup Dialog',
               useCases: [
+                PopupStyler().versionUpatePopup()
               ],
             ),
             WidgetbookComponent(
