@@ -27,8 +27,18 @@ class TextStyler {
               Option<Color>(label: "#439677",value: Color(0XFF439677)),
             ]
           ),
-          fontSize: context.knobs.number(label: "fontSize",description: "Merubah ukuran font").toDouble()
+          fontSize: context.knobs.number(label: "fontSize",description: "Merubah ukuran font").toDouble(),
+          letterSpacing: context.knobs.slider(label: "leterSpaccing",description: "Menambah jarak spasi pada text",initialValue: 0.5,min: 0,max: 5),
+          height: context.knobs.slider(label: "height",description: "Menambah jarak kebawah antar text",initialValue: 1,min: 0,max: 5),
+          overflow: context.knobs.options(label: "Overflow", options:const [
+            Option(label: "clip", value: TextOverflow.clip),
+            Option(label: "ellipsis", value: TextOverflow.ellipsis),
+            Option(label: "fade", value: TextOverflow.fade),
+            Option(label: "visible", value: TextOverflow.visible),
+          ]),
+          
         ),
+        maxLines: context.knobs.number(label: "maxLine",description: "Melakukan setting maksimal baris",initialValue: 15).toInt(),
       ),
     );
   }
