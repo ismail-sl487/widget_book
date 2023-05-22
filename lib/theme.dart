@@ -3,6 +3,10 @@ import 'dart:ui';
 import 'package:widgetbook/widgetbook.dart';
 
 const primaryColor = Color(0xFF0D4491);
+var darkBlueColor = const Color(0xFF0C4491);
+const secondaryColor = Color(0xff01133D);
+
+
 
  var colorOption = const[
     Option<Color>(label: "#0D4491",value: Color(0xFF0D4491)),

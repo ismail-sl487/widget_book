@@ -1,5 +1,6 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:widget_book/main.dart';
 import 'package:widget_book/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 
@@ -139,4 +140,103 @@ class PopupStyler {
       ],
     ),);
   }
+
+
+  WidgetbookUseCase failedDialog(){
+  
+    return WidgetbookUseCase(name: "MeFailedDialog", builder: (p0) => 
+      SimpleDialog(
+        contentPadding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        elevation: 2,
+        alignment: Alignment.center,
+        children: [
+          SizedBox(
+            width: MediaQuery.of(navigatorKey.currentState!.context).size.width,
+            child: Stack(children: [
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                            color: const Color(0xffF12E2E).withOpacity(0.2),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(50))),
+                        child: Center(
+                          child: Container(
+                            height: 80,
+                            width: 80,
+                            decoration: const BoxDecoration(
+                                color: Colors.red,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(40.0))),
+                            child: Center(
+                              child: Icon(p0.knobs.options(label: "icon", options: const[
+                                Option(label: "close", value: EvaIcons.close),
+                                Option(label: "alert", value: EvaIcons.alertCircle),
+                                Option(label: "stop", value: EvaIcons.stopCircle),
+                              ]),
+                                color: Colors.white, size: p0.knobs.number(label: "iconSize",initialValue: 50).toDouble()),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      WidgetText(
+                        textAlign: TextAlign.center,
+                        text: p0.knobs.text(label: "title",initialValue: "Failed"),
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Center(child: 
+                        WidgetText(text: p0.knobs.text(label: "subtitle",initialValue: "Gagal melakukan pengiriman data \n Mohon coba kembali"),
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w400,
+                          textAlign: TextAlign.center,
+                          heightSpacingText: 1.5,
+                        )
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(navigatorKey.currentState!.context);
+                },
+                child: const Align(
+                  alignment: Alignment.topRight,
+                  child: Icon(
+                    Icons.clear,
+                    color: Colors.grey,
+                    size: 26,
+                  ),
+                ),
+              )
+            ]),
+          ),
+        ],
+      ),
+    );
+  }
+
 }

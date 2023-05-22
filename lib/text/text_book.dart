@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widget_book/shared/text_widget.dart';
+import 'package:widget_book/shared/toggle_widget.dart';
 import 'package:widget_book/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 
@@ -63,5 +64,13 @@ class TextStyler {
           ],
         ),
     );
+  }
+
+  WidgetbookUseCase textToggle(){
+    return WidgetbookUseCase(name: "TextToggle", builder: (p0) => 
+        ToggleWidget(title: p0.knobs.text(label: "label",description: "Merubah judul label toggle",initialValue: "Example Toggle"), onChanged: (value){
+          p0.knobs.boolean(label: "value",description: "Merubah toggle");
+        }, value: p0.knobs.boolean(label: "value",description: "Merubah toggle"))
+    ,);
   }
 }

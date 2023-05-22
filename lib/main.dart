@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:widget_book/TextField/text_field_book.dart';
 import 'package:widget_book/button/button_book.dart';
-import 'package:widget_book/popup/popup_version.dart';
+import 'package:widget_book/dropdown/dropdown_book.dart';
+import 'package:widget_book/popup/popup.dart';
 import 'package:widget_book/text/text_book.dart';
 import 'package:widgetbook/widgetbook.dart';
 
-
+final navigatorKey = GlobalKey<NavigatorState>();
 void main() {
   runApp(const MyApp());
 }
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      navigatorKey: navigatorKey,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -45,27 +47,29 @@ class HotreloadWidgetbook extends StatelessWidget {
               name: 'Text',
               useCases: [
                 TextStyler().text(),
-                TextStyler().textRow()
+                TextStyler().textRow(),
+                TextStyler().textToggle(),
               ],
             ),
             WidgetbookComponent(
               name: 'TextField',
               useCases: [
                 TextFieldStyler().textfieldBook(),
-                TextFieldStyler().textfieldBookBottomLine()
+                TextFieldStyler().textfieldBookBottomLine(),
               ],
             ),
             
             WidgetbookComponent(
               name: 'Popup Dialog',
               useCases: [
-                PopupStyler().versionUpatePopup()
+                PopupStyler().versionUpatePopup(),
+                PopupStyler().failedDialog(),
               ],
             ),
             WidgetbookComponent(
-              name: 'Bottom Navbar',
+              name: 'Drop Down',
               useCases: [
-               
+                DropdownStlyer().dropdownBook()
               ],
             ),
           ],
