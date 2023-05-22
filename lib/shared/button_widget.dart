@@ -1,37 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:widget_book/shared/text_widget.dart';
+import 'package:widget_book/theme.dart';
 
-class ButtonWidget extends StatelessWidget {
-  const ButtonWidget(
-      {Key? key,
-        required this.onPress,
-        required this.title,
-        this.bgColor = Colors.white,
-        this.borderColor = Colors.white,
-        this.textColor = Colors.white,
-        this.borderRadius = 50.0})
-      : super(key: key);
-  final Function() onPress;
-  final String title;
-  final double borderRadius;
-  final Color bgColor, borderColor, textColor;
+class MeButton extends StatelessWidget {
+  const MeButton({
+    Key? key,
+    this.icon,
+    this.verticalPadding = 14,
+    this.borderRadius = 6,
+    this.bgColor = primaryColor,
+    this.secondaryColor = Colors.white,
+    required this.onTap,
+    this.label = ""
+    
+    
+  }) : super(key: key);
+  final String label;
+  final IconData? icon;
+  final double verticalPadding,borderRadius;
+  final Color? bgColor,secondaryColor;
+  final Function() onTap;
+  
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: onPress,
+    return ElevatedButton.icon(
+      icon: icon != null? Icon(icon) : const SizedBox(),
       style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          const EdgeInsets.symmetric(vertical: 13),
-        ),
+      padding: MaterialStateProperty.all(EdgeInsets.only(top: verticalPadding, bottom: verticalPadding,right: 15,left: 8)),
         shape: MaterialStateProperty.all(RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius))),
-        side: MaterialStateProperty.all( BorderSide(color: borderColor, width: 1.0, style: BorderStyle.solid),),
-        backgroundColor: MaterialStateProperty.all(bgColor),
+          borderRadius: BorderRadius.circular(borderRadius))),
+          backgroundColor: MaterialStateProperty.all( bgColor ),
       ),
-      child: WidgetText(
-        text: title,
-        color: textColor,
-      ),
+      onPressed: onTap,
+      label: MCText(
+        text: label,
+        color: secondaryColor!
+      ),       
     );
   }
 }
+

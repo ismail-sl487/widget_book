@@ -1,7 +1,11 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:widget_book/TextField/text_field_book.dart';
 import 'package:widget_book/button/button_book.dart';
+import 'package:widget_book/driver_app/permission_book.dart';
 import 'package:widget_book/dropdown/dropdown_book.dart';
+import 'package:widget_book/notification/notification_book.dart';
 import 'package:widget_book/popup/popup.dart';
 import 'package:widget_book/text/text_book.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -72,9 +76,22 @@ class HotreloadWidgetbook extends StatelessWidget {
                 DropdownStlyer().dropdownBook()
               ],
             ),
+            WidgetbookComponent(
+              name: 'Foregorund Notification',
+              useCases: [
+                NotificationStyler().notificationBook()
+              ],
+            ),
           ],
         ),
-        WidgetbookCategory(name: "VSMS 2",widgets: [])
+        WidgetbookCategory(name: "Driver App ",widgets: [
+          WidgetbookComponent(
+              name: 'Permission',
+              useCases: [
+                PermissionStyler().permissionBook()
+              ],
+            ),
+        ])
       ],
       themes: [
         WidgetbookTheme(
@@ -86,7 +103,7 @@ class HotreloadWidgetbook extends StatelessWidget {
           data: ThemeData.dark(),
         ),
       ],
-      appInfo: AppInfo(name: 'Example'),
+      appInfo: AppInfo(name: 'McEasy Widget Book'),
     );
   }
 }

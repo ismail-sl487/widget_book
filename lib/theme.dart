@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 const primaryColor = Color(0xFF0D4491);
@@ -22,4 +24,12 @@ var textWeight = const [
   Option(label: "500", value: FontWeight.w500),
   Option(label: "600", value: FontWeight.w600),
   Option(label: "700", value: FontWeight.w700),
+];
+
+var iconTheme = const[
+  Option(label: "close", value: EvaIcons.close),
+  Option(label: "alert", value: EvaIcons.alertCircle),
+  Option(label: "stop", value: EvaIcons.stopCircle),
+  Option(label: "key", value: Icons.vpn_key_outlined),
+  Option(label: "GPS", value: Icons.gps_fixed_outlined)
 ];

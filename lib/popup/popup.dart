@@ -18,7 +18,7 @@ class PopupStyler {
         Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const WidgetText(
+                  const MCText(
                     text: 'Pembaruan Aplikasi',
                     fontSize: 16,
                     color: primaryColor,
@@ -46,18 +46,18 @@ class PopupStyler {
                 child: Divider(),
               ),
               context.knobs.boolean(label: "isForceUpdate",description: "")
-                  ? const WidgetText(
+                  ? const MCText(
                       text:
                           'Aplikasi telah merilis versi terbaru. Silahkan perbarui aplikasi untuk dapat menggunakan kembali.',
                       fontSize: 14,
-                      heightSpacingText: 1.5,
+                      height: 1.5,
                       color: Colors.grey,
                     )
-                  : const WidgetText(
+                  : const MCText(
                       text:
                           'Aplikasi merekomendasikan Anda untuk memperbarui aplikasi ke versi terbaru. Anda dapat terus menggunakan aplikasi saat mengunduh pembaruan.',
                       fontSize: 14,
-                      heightSpacingText: 1.5,
+                      height: 1.5,
                       color: Colors.grey,
                     ),
               const SizedBox(
@@ -88,7 +88,7 @@ class PopupStyler {
                                   ),
                                   padding: const EdgeInsets.all(8.5),
                                   child: const Center(
-                                    child: WidgetText(
+                                    child: MCText(
                                       text: 'Nanti Saja',
                                       color: primaryColor,
                                       fontWeight: FontWeight.bold,
@@ -125,7 +125,7 @@ class PopupStyler {
                           ),
                           padding: const EdgeInsets.all(8.5),
                           child: const Center(
-                            child: WidgetText(
+                            child: MCText(
                               text: 'Perbarui',
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -170,17 +170,16 @@ class PopupStyler {
                         height: 100,
                         width: 100,
                         decoration: BoxDecoration(
-                            color: const Color(0xffF12E2E).withOpacity(0.2),
+                            color: p0.knobs.options(label: "secondaryColor", options: colorOption,description: "Merubah warna background icon").withOpacity(0.2),
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(50))),
                         child: Center(
                           child: Container(
                             height: 80,
                             width: 80,
-                            decoration: const BoxDecoration(
-                                color: Colors.red,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(40.0))),
+                            decoration:  BoxDecoration(
+                                color: p0.knobs.options(label: "secondaryColor", options: colorOption,description: "Merubah warna sekunder"),
+                                borderRadius:const BorderRadius.all(Radius.circular(40.0))),
                             child: Center(
                               child: Icon(p0.knobs.options(label: "icon", options: const[
                                 Option(label: "close", value: EvaIcons.close),
@@ -195,21 +194,22 @@ class PopupStyler {
                       const SizedBox(
                         height: 30,
                       ),
-                      WidgetText(
+                      MCText(
                         textAlign: TextAlign.center,
                         text: p0.knobs.text(label: "title",initialValue: "Failed"),
                         fontWeight: FontWeight.w700,
                         fontSize: 18,
+                        color: p0.knobs.options(label: "secondaryColor", options: colorOption,description: "Merubah warna tulisan pada title"),
                       ),
                       const SizedBox(
                         height: 8,
                       ),
                       Center(child: 
-                        WidgetText(text: p0.knobs.text(label: "subtitle",initialValue: "Gagal melakukan pengiriman data \n Mohon coba kembali"),
+                        MCText(text: p0.knobs.text(label: "subtitle",initialValue: "Gagal melakukan pengiriman data \n Mohon coba kembali"),
                           color: Colors.grey,
                           fontWeight: FontWeight.w400,
                           textAlign: TextAlign.center,
-                          heightSpacingText: 1.5,
+                          height: 1.5,
                         )
                       ),
                       const SizedBox(

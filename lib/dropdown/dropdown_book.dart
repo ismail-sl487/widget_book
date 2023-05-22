@@ -10,7 +10,7 @@ class DropdownStlyer {
   List<Widget> getData({int dataCount = 0}){
     List<Widget> widget =[] ;
     if(dataCount <= 0){
-      widget.add(const SizedBox(child: WidgetText(text: "Data Not Found")));
+      widget.add(const SizedBox(child: MCText(text: "Data Not Found")));
     }else{
       for (var i = 0;i < dataCount ;i++){
         widget.add( Column(
@@ -23,7 +23,7 @@ class DropdownStlyer {
                 children: const [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical:4),
-                    child: WidgetText(
+                    child: MCText(
                         text: "Text",
                         color:primaryColor),
                   ),
@@ -94,7 +94,7 @@ class DropdownStlyer {
                     child: Visibility(
                       visible: p0.knobs.slider(label: "data",description: "Untuk mengeteahui apakah sedang kosong atau tidak",min: 0,max: 5,initialValue: 0).toInt() != 0,
                       child: const Center(
-                          child: WidgetText(
+                          child: MCText(
                               text: "View All Result")),
                     ),
                   ),

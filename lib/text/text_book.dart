@@ -7,8 +7,8 @@ import 'package:widgetbook/widgetbook.dart';
 class TextStyler {
   WidgetbookUseCase text() {
     return WidgetbookUseCase(
-        name: 'CustomText',
-        builder: (context) => Text(context.knobs.text(initialValue: "Lorem ipsum dolor sit amet",label: "label",),
+        name: 'MCText',
+        builder: (context) => Text(context.knobs.text(initialValue: "Lorem ipsum dolor sit amet",label: "text",),
         style: TextStyle(
           fontWeight: context.knobs.options(label: "fontWeight", 
           options:textWeight,description: "merubah ketebalan font"),
@@ -36,7 +36,7 @@ class TextStyler {
 
   WidgetbookUseCase textRow() {
     return WidgetbookUseCase(
-        name: 'TextRow',
+        name: 'MCTextRow',
         builder: (context) => 
         Row(
           mainAxisAlignment: context.knobs.options(label: "mainAxisAligment", options: const [
@@ -48,14 +48,14 @@ class TextStyler {
             Option(label: "start", value: MainAxisAlignment.start),
           ]),
           children: [
-            WidgetText(
+            MCText(
               text: context.knobs.text(label: "LText",description: "Untuk mentukan isi text",initialValue: "Perusahaan"),
               color: context.knobs.options(label: "LColor", options: colorOption,description: "Mengubah warna font"),
               fontSize: context.knobs.slider(label: "LFontSize",initialValue: 12,min: 9,max: 26),
               fontWeight: context.knobs.options(label: "LTextWeight", options: textWeight),
             ),
             SizedBox(width: context.knobs.number(label: "spacing",description: "Memberi jarak antar text",initialValue: 12 ).toDouble(),),
-            WidgetText(
+            MCText(
               text: context.knobs.text(label: "RText",description: "Untuk mentukan isi text",initialValue: " : PT ABC mantab"),
               color: context.knobs.options(label: "RColor", options: colorOption,description: "Mengubah warna font"),
               fontSize: context.knobs.slider(label: "RFontSize",initialValue: 12,min: 9,max: 26),
@@ -67,9 +67,9 @@ class TextStyler {
   }
 
   WidgetbookUseCase textToggle(){
-    return WidgetbookUseCase(name: "TextToggle", builder: (p0) => 
-        ToggleWidget(title: p0.knobs.text(label: "label",description: "Merubah judul label toggle",initialValue: "Example Toggle"), onChanged: (value){
-          p0.knobs.boolean(label: "value",description: "Merubah toggle");
+    return WidgetbookUseCase(name: "MCTextToggle", builder: (p0) => 
+        MCTextToggle(title: p0.knobs.text(label: "label",description: "Merubah judul label toggle",initialValue: "Example Toggle"), onChanged: (result){
+         result = p0.knobs.boolean(label: "value",description: "Merubah toggle");
         }, value: p0.knobs.boolean(label: "value",description: "Merubah toggle"))
     ,);
   }

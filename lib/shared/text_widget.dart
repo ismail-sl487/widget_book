@@ -1,46 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:widget_book/theme.dart';
 
-class WidgetText extends StatelessWidget {
+class MCText extends StatelessWidget {
+  const MCText({
+    Key? key,
+    required this.text,
+    this.fontWeight = FontWeight.w400,
+    this.color = Colors.black,
+    this.fontSize = 12,
+    this.letterSpacing = 0.5,
+    this.height = 1,
+    this.overflow,
+    this.maxLine,
+    this.textAlign,
+  }) : super(key: key);
+
   final String text;
-  final double? fontSize;
-  final FontWeight? fontWeight;
-  final Color? color;
-  final int? maxLines;
-  final double? lineHeight;
+  final FontWeight fontWeight;
+  final Color color;
+  final double fontSize,letterSpacing,height;
+  final TextOverflow? overflow;
+  final int? maxLine;
   final TextAlign? textAlign;
-  final double? heightSpacingText;
-  final double? letterSpacing;
-  const WidgetText(
-      {Key? key,
-      required this.text,
-      this.fontSize,
-      this.textAlign,
-      this.fontWeight,
-      this.lineHeight,
-      this.heightSpacingText = 1,
-      this.color,
-      this.maxLines = 5,
-      this.letterSpacing = 0.2})
-      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      maxLines: maxLines,
-      textAlign: textAlign ?? TextAlign.left,
-      text: TextSpan(
-          text: text,
-          style: CommonTextStyle.style(
-              letterSpacing: letterSpacing,
-              heightSpacingText: heightSpacingText,
-              lineHeight: lineHeight,
-              color: color ?? primaryColor,
-              fontWeight: fontWeight ?? FontWeight.w400,
-              fontSize: fontSize ?? 14)),
+    return Text(text,
+      style: TextStyle(
+        fontWeight: fontWeight, 
+        color: color,
+        fontSize: fontSize,
+        letterSpacing: letterSpacing,
+        height: height,
+        overflow: overflow,
+      ),
+      maxLines: maxLine,
+      textAlign: textAlign,
     );
   }
-  
 }
 
 class CommonTextStyle {
