@@ -20,7 +20,6 @@ class PopupStyler {
 
 
   WidgetbookUseCase failedDialog(){
-  
     return WidgetbookUseCase(name: "MCFailedDialog", builder: (p0) => 
       MCFailedDialog(
         backgroundColor: p0.knobs.options(label: "secondaryColor", options: colorOption,description: "Merubah warna background icon"),
