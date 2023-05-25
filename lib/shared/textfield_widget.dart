@@ -1,3 +1,4 @@
+library mceasy_widget;
 import 'package:flutter/material.dart';
 
 class TextFieldStyles extends StatelessWidget {
@@ -50,5 +51,50 @@ class TextFieldStyles extends StatelessWidget {
         hintText: hintName,
       ),
     );
+  }
+}
+
+class MCTextfield extends StatelessWidget {
+  const   MCTextfield({
+    Key? key,
+    this.width = 80,
+    this.borderRadius = 6,
+    this.height,
+    this.enabled = true,
+    this.preffixSizeIcon,
+    this.hintText = "",
+    this.suffixIcon, 
+    this.filled = true,
+    this.prefixIcon,
+    this.fillColor =Colors.white,
+  }) : super(key: key);
+
+  final double? width,height,preffixSizeIcon,borderRadius;
+  final bool? enabled,filled;
+  final Widget? prefixIcon,suffixIcon;
+  final String hintText;
+  final Color? fillColor ;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      enabled: enabled,
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.only(left: 13, top: 6),
+        prefixIcon:  prefixIcon,
+        suffixIcon: suffixIcon,
+        hintText: hintText,
+        filled: filled,
+        fillColor: fillColor,
+        hintStyle: const TextStyle(fontSize: 12),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius!),
+            borderSide: BorderSide(
+              width: width!
+            ),
+            // style: BorderStyle.none,
+          ),
+        ),
+      );
   }
 }

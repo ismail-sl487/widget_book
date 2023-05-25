@@ -1,7 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:widget_book/TextField/text_field_book.dart';
+import 'package:widget_book/textfield/text_field_book.dart';
 import 'package:widget_book/button/button_book.dart';
 import 'package:widget_book/driver_app/permission_book.dart';
 import 'package:widget_book/dropdown/dropdown_book.dart';
@@ -58,7 +58,7 @@ class HotreloadWidgetbook extends StatelessWidget {
             WidgetbookComponent(
               name: 'TextField',
               useCases: [
-                TextFieldStyler().textfieldBook(),
+                TextFieldStyler().textfieldBooknew(),
                 TextFieldStyler().textfieldBookBottomLine(),
               ],
             ),

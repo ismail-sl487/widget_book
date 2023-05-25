@@ -26,10 +26,22 @@ var textWeight = const [
   Option(label: "700", value: FontWeight.w700),
 ];
 
+var iconTemp = const [
+  Option(label: "none", value: null),
+  Option(label: "eye", value: Icon(Icons.visibility_off_outlined))
+];
+var suffixIcon =  [
+  const Option(label: "none", value: null),
+  Option(label: "eye", value: IconButton(onPressed: () {} ,icon: const Icon(Icons.visibility_off_outlined))),
+  Option(label: "alert", value: IconButton(onPressed: () {} ,icon: const Icon(EvaIcons.stopCircle))),
+  Option(label: "GPS", value: IconButton(onPressed: () {} ,icon: const Icon(Icons.gps_fixed_outlined)))
+];
+
 var iconTheme = const[
   Option(label: "close", value: EvaIcons.close),
   Option(label: "alert", value: EvaIcons.alertCircle),
   Option(label: "stop", value: EvaIcons.stopCircle),
   Option(label: "key", value: Icons.vpn_key_outlined),
-  Option(label: "GPS", value: Icons.gps_fixed_outlined)
+  Option(label: "GPS", value: Icons.gps_fixed_outlined),
+  Option(label: "eye", value: Icons.visibility_off_outlined)
 ];

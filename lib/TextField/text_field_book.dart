@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:widget_book/shared/textfield_widget.dart';
+import 'package:widget_book/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 
 class TextFieldStyler {
   WidgetbookUseCase textfieldBook(){
-    return WidgetbookUseCase(name: "McEasyTextField", builder: (context) => 
+    return WidgetbookUseCase(name: "MCTextField", builder: (context) => 
       Padding(
         padding: const EdgeInsets.only(top: 20,left: 10),
         child: SizedBox(
@@ -14,8 +16,8 @@ class TextFieldStyler {
             enabled: context.knobs.boolean(label: "enabled",initialValue: true),
             decoration: InputDecoration(
               contentPadding: const EdgeInsets.symmetric(vertical: 5),
-              prefixIcon:  Icon(Icons.add_location_alt_outlined, size: context.knobs.number(label: "preffixSizeIcon",initialValue: 12).toDouble(),),
-              suffixIcon: context.knobs.boolean(label: "suffixIcon",description: "Digunakan untuk membuat icon pada sisi kanan") ? IconButton(onPressed: (){}, icon: Icon(Icons.visibility_off_outlined,size: context.knobs.number(label: "suffixSizeIcon",initialValue: 12).toDouble(),)) : const SizedBox(),
+              prefixIcon:  Icon(context.knobs.options(label: "prefixIcon", description: "Merubah icon pada prefix", options: iconTheme), size: context.knobs.number(label: "preffixSizeIcon",initialValue: 12).toDouble(),),
+              suffixIcon: context.knobs.boolean(label: "suffixIcon",description: "Digunakan untuk membuat icon pada sisi kanan (non-param)") ? IconButton(onPressed: (){}, icon: Icon(context.knobs.options(label: "label", options: iconTheme),size: context.knobs.number(label: "suffixSizeIcon",initialValue: 12).toDouble(),)) : const SizedBox(),
               hintText: context.knobs.text(label: "hintText",description: "Untuk menentukan placeholder pada textfield",initialValue: "Placeholder..."),
               hintStyle: const TextStyle(fontSize: 12),
               border: OutlineInputBorder(
@@ -27,6 +29,25 @@ class TextFieldStyler {
               ),
             )
           ),
+        ),
+      )
+    );
+  }
+
+  WidgetbookUseCase textfieldBooknew(){
+    return WidgetbookUseCase(name: "MCTextField", builder: (context) => 
+      Padding(
+        padding: const EdgeInsets.only(top: 20,left: 10),
+        child: SizedBox(
+          width: context.knobs.slider(label: "width",description: "Mengubah panjang textfield",initialValue: 300,max: 1000,min: 50),
+          height: context.knobs.slider(label: "height",description: "Mengubah lebar textfield",initialValue: 35,max: 80,min: 20),
+          child: MCTextfield(
+             enabled: context.knobs.boolean(label: "enabled",initialValue: true),
+             hintText: context.knobs.text(label: "hintText",description: "Untuk menentukan placeholder pada textfield",initialValue: "Placeholder..."),
+             borderRadius: context.knobs.number(label: "borderRadius",initialValue: 6).toDouble(),
+             prefixIcon: context.knobs.options(label: "prefixIcon", options: iconTemp),
+             suffixIcon: context.knobs.options(label: "suffixIcon", options: suffixIcon),
+          )
         ),
       )
     );

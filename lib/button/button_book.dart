@@ -9,8 +9,9 @@ class ButtonStyler {
 
   WidgetbookUseCase button() {
     return WidgetbookUseCase(
-        name: 'CustomButton',
-        builder: (context) => ElevatedButton.icon(
+        name: 'MCButton',
+        builder: (context) => 
+        ElevatedButton.icon(
           icon: context.knobs.boolean(label: "icon",description: "Untuk menampilkan icon (Non-Param)") ? Icon(context.knobs.options(label: "iconButton", options: iconTheme),color: context.knobs.options(
               label: "secondaryColor",
               description: "Mengganti warna pada font button",
@@ -54,7 +55,7 @@ class ButtonStyler {
 
   WidgetbookUseCase outlineButton() {
     return WidgetbookUseCase(
-        name: 'CustomOutlineButton',
+        name: 'MCButtonOutline',
         builder: (context) => OutlinedButton.icon(
           icon: context.knobs.boolean(label: "icon",description: "Untuk menampilkan icon (Non-Param)") ? Icon(context.knobs.options(label: "iconButton", options: iconTheme),color: context.knobs.options(
               label: "secondaryColor",
