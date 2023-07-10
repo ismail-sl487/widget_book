@@ -1,38 +1,35 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:widget_book/main.dart';
-import 'package:widget_book/shared/button_widget.dart';
-import 'package:widget_book/shared/text_widget.dart';
-import 'package:widget_book/theme.dart';
+import 'package:mceasy_widget/main.dart';
+import 'package:mceasy_widget/shared/button_widget.dart';
+import 'package:mceasy_widget/shared/text_widget.dart';
+import 'package:mceasy_widget/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:bot_toast/bot_toast.dart';
 
-
 class NotificationStyler {
-  
-  WidgetbookUseCase notificationBook(){
-    return WidgetbookUseCase(name: "MeNotification", builder: (p0) => 
-        MeButton(
-          onTap: (){
-            showToastBar(navigatorKey.currentState!.context, message: "Example Text", title: "Lorem ipsum dolor sit amet");
-          },
-          label: "Toast",
-          icon: EvaIcons.activity,
-        )
-    );
+  WidgetbookUseCase notificationBook() {
+    return WidgetbookUseCase(
+        name: "MeNotification",
+        builder: (p0) => MeButton(
+              onTap: () {
+                showToastBar(navigatorKey.currentState!.context,
+                    message: "Example Text",
+                    title: "Lorem ipsum dolor sit amet");
+              },
+              label: "Toast",
+              icon: EvaIcons.activity,
+            ));
   }
-
 }
 
-
-void showToastBar(context,{required String message, required String title}) {
+void showToastBar(context, {required String message, required String title}) {
   BotToast.showAttachedWidget(
       attachedBuilder: (_) {
         return Material(
           color: Colors.white,
           child: InkWell(
-            onTap: () {
-            },
+            onTap: () {},
             child: Container(
               decoration: const BoxDecoration(
                   color: Colors.white,
@@ -71,8 +68,7 @@ void showToastBar(context,{required String message, required String title}) {
                               fontWeight: FontWeight.w600,
                               color: secondaryColor,
                             ),
-                            SizedBox(height: 5),
-                            
+                            const SizedBox(height: 5),
                           ],
                         ),
                       ],
@@ -84,6 +80,6 @@ void showToastBar(context,{required String message, required String title}) {
           ),
         );
       },
-      duration: Duration(seconds: 4),
-      target: Offset(520, 520));
+      duration: const Duration(seconds: 4),
+      target: const Offset(520, 520));
 }

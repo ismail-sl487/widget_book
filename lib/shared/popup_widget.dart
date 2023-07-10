@@ -1,8 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:widget_book/main.dart';
-import 'package:widget_book/shared/text_widget.dart';
-import 'package:widget_book/theme.dart';
+import 'package:mceasy_widget/main.dart';
+import 'package:mceasy_widget/shared/text_widget.dart';
 
 class MCDialogVersion extends StatelessWidget {
   const MCDialogVersion({
@@ -34,23 +33,23 @@ class MCDialogVersion extends StatelessWidget {
             Visibility(
               visible: isForcedUpdate,
               child: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                padding: const EdgeInsets.all(3),
-                child: Icon(
-                  EvaIcons.close,
-                  color: color,
-                  size: 24,
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(3),
+                  child: Icon(
+                    EvaIcons.close,
+                    color: color,
+                    size: 24,
+                  ),
                 ),
               ),
-                            ),
             ),
           ],
         ),
         const Padding(
-          padding:  EdgeInsets.only(bottom: 1,top: 6),
+          padding: EdgeInsets.only(bottom: 1, top: 6),
           child: Divider(),
         ),
         MCText(
@@ -70,13 +69,12 @@ class MCDialogVersion extends StatelessWidget {
             children: [
               Expanded(
                 child: Visibility(
-                  visible:!isForcedUpdate,
+                  visible: !isForcedUpdate,
                   child: Row(
                     children: [
                       Expanded(
                         child: InkWell(
-                          onTap: () async {
-                          },
+                          onTap: () async {},
                           child: Container(
                             decoration: BoxDecoration(
                               color: Colors.transparent,
@@ -105,9 +103,7 @@ class MCDialogVersion extends StatelessWidget {
               ),
               Expanded(
                 child: InkWell(
-                  onTap: () {
-
-                  },
+                  onTap: () {},
                   child: Container(
                     decoration: BoxDecoration(
                       color: color,
@@ -135,7 +131,6 @@ class MCDialogVersion extends StatelessWidget {
   }
 }
 
-
 class MCFailedDialog extends StatelessWidget {
   const MCFailedDialog({
     Key? key,
@@ -146,9 +141,9 @@ class MCFailedDialog extends StatelessWidget {
     this.subtitle = "",
   }) : super(key: key);
 
- final Color backgroundColor,backgroundOpacity;
- final Widget icon;
- final String title,subtitle;
+  final Color backgroundColor, backgroundOpacity;
+  final Widget icon;
+  final String title, subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -178,14 +173,16 @@ class MCFailedDialog extends StatelessWidget {
                       width: 100,
                       decoration: BoxDecoration(
                           color: backgroundOpacity,
-                          borderRadius: const BorderRadius.all(Radius.circular(50))),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(50))),
                       child: Center(
                         child: Container(
                           height: 80,
                           width: 80,
-                          decoration:  BoxDecoration(
+                          decoration: BoxDecoration(
                               color: backgroundColor,
-                              borderRadius:const BorderRadius.all(Radius.circular(40.0))),
+                              borderRadius: const BorderRadius.all(
+                                  Radius.circular(40.0))),
                           child: Center(
                             child: icon,
                           ),
@@ -205,14 +202,14 @@ class MCFailedDialog extends StatelessWidget {
                     const SizedBox(
                       height: 8,
                     ),
-                    Center(child: 
-                      MCText(text: subtitle,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w400,
-                        textAlign: TextAlign.center,
-                        height: 1.5,
-                      )
-                    ),
+                    Center(
+                        child: MCText(
+                      text: subtitle,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w400,
+                      textAlign: TextAlign.center,
+                      height: 1.5,
+                    )),
                     const SizedBox(
                       height: 4,
                     ),
@@ -240,7 +237,6 @@ class MCFailedDialog extends StatelessWidget {
   }
 }
 
-
 class MCPermissionDialog extends StatelessWidget {
   const MCPermissionDialog({
     Key? key,
@@ -255,67 +251,64 @@ class MCPermissionDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
-    contentPadding: const EdgeInsets.all(0),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-    children: [
-    Container(
-      decoration: BoxDecoration(
-        color: secondaryColor,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(8),
-          topRight: Radius.circular(8),
+      contentPadding: const EdgeInsets.all(0),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: secondaryColor,
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(8),
+              topRight: Radius.circular(8),
+            ),
+          ),
+          padding: const EdgeInsets.symmetric(vertical: 30),
+          child: Icon(
+            icon,
+            color: Colors.white,
+            size: 50,
+          ),
         ),
-      ),
-      padding: const EdgeInsets.symmetric(vertical: 30),
-      child: Icon(
-        icon,
-        color: Colors.white,
-        size: 50,
-      ),
-    ),
-    Container(
-      padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
-      child: MCText(
-        text:label,
-        fontSize: 16,
-      ),
-    ),
-    Padding(
-      padding: const EdgeInsets.only(right: 12.0, bottom: 8),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          TextButton(
-            onPressed: () async {
-              
-            },
-            child: const MCText(
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-              text: 'CANCEL',
-            ),
+        Container(
+          padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+          child: MCText(
+            text: label,
+            fontSize: 16,
           ),
-          const SizedBox(
-            width: 8,
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: secondaryColor),
-            onPressed: () async {
-             
-            },
-            child: const SizedBox(
-              child: MCText(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-                text: 'ENABLE',
-                color: Colors.white,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 12.0, bottom: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextButton(
+                onPressed: () async {},
+                child: const MCText(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  text: 'CANCEL',
+                ),
               ),
-            ),
+              const SizedBox(
+                width: 8,
+              ),
+              ElevatedButton(
+                style:
+                    ElevatedButton.styleFrom(backgroundColor: secondaryColor),
+                onPressed: () async {},
+                child: const SizedBox(
+                  child: MCText(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    text: 'ENABLE',
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-    )
-    ],
-  );
+        )
+      ],
+    );
   }
 }

@@ -1,6 +1,6 @@
 {
-    "name": "widget_book",
-    "short_name": "widget_book",
+    "name": "mceasy_widget",
+    "short_name": "mceasy_widget",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,7 +1,9 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:widget_book/shared/switch_toggle_widget.dart';
-import 'package:widget_book/shared/text_widget.dart';
-import 'package:widget_book/theme.dart';
+import 'package:mceasy_widget/shared/switch_toggle_widget.dart';
+import 'package:mceasy_widget/shared/text_widget.dart';
+import 'package:mceasy_widget/theme.dart';
 
 class MCTextToggle extends StatelessWidget {
   MCTextToggle(

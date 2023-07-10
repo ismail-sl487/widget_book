@@ -1,11 +1,13 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
-import 'package:widget_book/theme.dart';
+import 'package:mceasy_widget/theme.dart';
 
 class CustomSwitch extends StatefulWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
 
-  CustomSwitch({Key? key, required this.value, required this.onChanged})
+  const CustomSwitch({Key? key, required this.value, required this.onChanged})
       : super(key: key);
 
   @override
@@ -20,11 +22,13 @@ class _CustomSwitchState extends State<CustomSwitch>
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 60));
+    _animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 60));
     _circleAnimation = AlignmentTween(
             begin: widget.value ? Alignment.centerRight : Alignment.centerLeft,
             end: widget.value ? Alignment.centerLeft : Alignment.centerRight)
-        .animate(CurvedAnimation(parent: _animationController!, curve: Curves.linear));
+        .animate(CurvedAnimation(
+            parent: _animationController!, curve: Curves.linear));
   }
 
   @override
@@ -47,18 +51,30 @@ class _CustomSwitchState extends State<CustomSwitch>
             width: 45.0,
             height: 26.0,
             decoration: BoxDecoration(
-              border: Border.all(width: 1.2,color: _circleAnimation!.value == Alignment.centerLeft ? Colors.grey : primaryColor),
+              border: Border.all(
+                  width: 1.2,
+                  color: _circleAnimation!.value == Alignment.centerLeft
+                      ? Colors.grey
+                      : primaryColor),
               borderRadius: BorderRadius.circular(24.0),
-              color: _circleAnimation!.value == Alignment.centerLeft ? Colors.white : primaryColor,
+              color: _circleAnimation!.value == Alignment.centerLeft
+                  ? Colors.white
+                  : primaryColor,
             ),
             child: Padding(
-              padding: const EdgeInsets.only(top: 2.0, bottom: 2.0, right: 2.0, left: 2.0),
+              padding: const EdgeInsets.only(
+                  top: 2.0, bottom: 2.0, right: 2.0, left: 2.0),
               child: Container(
-                alignment:widget.value ? Alignment.centerRight : Alignment.centerLeft,
+                alignment:
+                    widget.value ? Alignment.centerRight : Alignment.centerLeft,
                 child: Container(
                   width: 19.0,
                   height: 19.0,
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: _circleAnimation!.value == Alignment.centerLeft ? Colors.grey :Colors.white),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: _circleAnimation!.value == Alignment.centerLeft
+                          ? Colors.grey
+                          : Colors.white),
                 ),
               ),
             ),

@@ -1,4 +1,7 @@
+// ignore_for_file: must_be_immutable
+
 library mceasy_widget;
+
 import 'package:flutter/material.dart';
 
 class TextFieldStyles extends StatelessWidget {
@@ -9,7 +12,7 @@ class TextFieldStyles extends StatelessWidget {
       this.hintName,
       this.color = Colors.black54,
       this.icon,
-      this.fillColor=Colors.white,
+      this.fillColor = Colors.white,
       this.onTap})
       : super(key: key);
 
@@ -55,7 +58,7 @@ class TextFieldStyles extends StatelessWidget {
 }
 
 class MCTextfield extends StatelessWidget {
-  const   MCTextfield({
+  const MCTextfield({
     Key? key,
     this.width = 80,
     this.borderRadius = 6,
@@ -63,17 +66,17 @@ class MCTextfield extends StatelessWidget {
     this.enabled = true,
     this.preffixSizeIcon,
     this.hintText = "",
-    this.suffixIcon, 
+    this.suffixIcon,
     this.filled = true,
     this.prefixIcon,
-    this.fillColor =Colors.white,
+    this.fillColor = Colors.white,
   }) : super(key: key);
 
-  final double? width,height,preffixSizeIcon,borderRadius;
-  final bool? enabled,filled;
-  final Widget? prefixIcon,suffixIcon;
+  final double? width, height, preffixSizeIcon, borderRadius;
+  final bool? enabled, filled;
+  final Widget? prefixIcon, suffixIcon;
   final String hintText;
-  final Color? fillColor ;
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +84,7 @@ class MCTextfield extends StatelessWidget {
       enabled: enabled,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.only(left: 13, top: 6),
-        prefixIcon:  prefixIcon,
+        prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintText: hintText,
         filled: filled,
@@ -89,12 +92,10 @@ class MCTextfield extends StatelessWidget {
         hintStyle: const TextStyle(fontSize: 12),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius!),
-            borderSide: BorderSide(
-              width: width!
-            ),
-            // style: BorderStyle.none,
-          ),
+          borderSide: BorderSide(width: width!),
+          // style: BorderStyle.none,
         ),
-      );
+      ),
+    );
   }
 }

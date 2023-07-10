@@ -1,5 +1,1 @@
-import 'package:widgetbook/widgetbook.dart';
-
-class ClassName {
-
-}
+class ClassName {}

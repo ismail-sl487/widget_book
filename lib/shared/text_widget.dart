@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_book/theme.dart';
+import 'package:mceasy_widget/theme.dart';
 
 class MCText extends StatelessWidget {
   const MCText({
@@ -18,16 +18,17 @@ class MCText extends StatelessWidget {
   final String text;
   final FontWeight fontWeight;
   final Color color;
-  final double fontSize,letterSpacing,height;
+  final double fontSize, letterSpacing, height;
   final TextOverflow? overflow;
   final int? maxLine;
   final TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
-    return Text(text,
+    return Text(
+      text,
       style: TextStyle(
-        fontWeight: fontWeight, 
+        fontWeight: fontWeight,
         color: color,
         fontSize: fontSize,
         letterSpacing: letterSpacing,
