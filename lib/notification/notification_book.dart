@@ -7,22 +7,43 @@ import 'package:widget_book/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:bot_toast/bot_toast.dart';
 
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
+  
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
 
+class _MyWidgetState extends State<MyWidget> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    showToastBar(context, message: "sadas", title: "asdadsads");
+  }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      navigatorKey: navigatorKey,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Container(),
+    );
+  }
+}
 class NotificationStyler {
   
   WidgetbookUseCase notificationBook(){
-    return WidgetbookUseCase(name: "MeNotification", builder: (p0) => 
-        MeButton(
-          onTap: (){
-            showToastBar(navigatorKey.currentState!.context, message: "Example Text", title: "Lorem ipsum dolor sit amet");
-          },
-          label: "Toast",
-          icon: EvaIcons.activity,
-        )
+    return WidgetbookUseCase(name: "MeNotification", builder: (p0) => MyWidget()
+       
     );
   }
 
 }
+
+
 
 
 void showToastBar(context,{required String message, required String title}) {
