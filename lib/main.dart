@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mceasy_widget/avatar/avatar_book.dart';
+import 'package:mceasy_widget/badge/badge_book.dart';
 import 'package:mceasy_widget/card/card_book.dart';
 import 'package:mceasy_widget/textfield/text_field_book.dart';
 import 'package:mceasy_widget/button/button_book.dart';
@@ -47,7 +48,8 @@ class HotreloadWidgetbook extends StatelessWidget {
             WidgetbookComponent(
               name: 'Badge',
               useCases: [
-                
+                BadgeStyler().badgeBook(),
+                BadgeStyler().badgeLabelBook(),
               ],
             ),
             WidgetbookComponent(

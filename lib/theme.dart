@@ -70,6 +70,7 @@ var colorOption = const [
   Option<Color>(label: "#0D4491", value: Color(0xFF0D4491)),
   Option<Color>(label: "#F64A33", value: Color(0XFFF64A33)),
   Option<Color>(label: "#439677", value: Color(0XFF439677)),
+  Option<Color>(label: "#FFFFFF", value: Color(0xFFFFFFFF)),
 ];
 
 var textWeight = const [
