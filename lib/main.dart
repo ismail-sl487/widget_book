@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mceasy_widget/avatar/avatar_book.dart';
+import 'package:mceasy_widget/card/card_book.dart';
 import 'package:mceasy_widget/textfield/text_field_book.dart';
 import 'package:mceasy_widget/button/button_book.dart';
 import 'package:mceasy_widget/driver_app/permission_book.dart';
@@ -38,6 +40,23 @@ class HotreloadWidgetbook extends StatelessWidget {
         WidgetbookCategory(
           name: 'Global Widgets',
           widgets: [
+            WidgetbookComponent(
+              name: 'Avatar',
+              useCases: [AvatarStyler().avatarBook()],
+            ),
+            WidgetbookComponent(
+              name: 'Badge',
+              useCases: [
+                
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Card',
+              useCases: [
+                CardStyler().cardBook(),
+                CardStyler().deliveryCardBook()
+              ],
+            ),
             WidgetbookComponent(
               name: 'Buttons',
               useCases: [

@@ -59,7 +59,7 @@ class CommonTextStyle {
         overflow: overflow ?? TextOverflow.ellipsis,
         color: color ?? primaryColor,
         fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: 'Gotham Pro',
+        fontFamily: 'GothaPro',
         fontSize: fontSize ?? 14);
   }
 }
