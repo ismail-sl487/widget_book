@@ -31,7 +31,6 @@ class CardStyler {
                       Option<Color>(label: "#0D4491", value: Color(0xFF0D4491)),
                       Option<Color>(label: "#439677", value: Color(0XFF439677)),
                     ]),
-                    statusFTColor: p0.knobs.options(label: "statusFTColor", options: colorOption),
                     depatureTime: p0.knobs.text(label: "depatureTime",initialValue: "21 Jan 2023, 13:00"),
                     origin: p0.knobs.text(label: "origin",initialValue: "Pool Surabaya"),
                 )

@@ -9,14 +9,13 @@ class ContentCardFO extends StatelessWidget {
     this.foNumber,
     required this.statusLabel,
     required this.statusBGColor,
-    required this.statusFTColor,
     this.depatureTime,
     this.origin,
   });
 
   final String? foNumber;
   final String statusLabel;
-  final Color statusFTColor,statusBGColor;
+  final Color statusBGColor;
   final String? origin;
   final String? depatureTime;
 
@@ -30,7 +29,7 @@ class ContentCardFO extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               MCText(text: foNumber??"",fontWeight: FontWeight.w700,fontSize: 18,),
-              MCStatusLabel(label: statusLabel,bgColor: statusBGColor,ftColor: statusFTColor),
+              MCStatusLabel(label: statusLabel,bgColor: statusBGColor.withOpacity(0.2),ftColor: statusBGColor),
               
             ],
           ),
@@ -42,14 +41,14 @@ class ContentCardFO extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
             children: [
-              Icon(EvaIcons.mapOutline),
-              SizedBox(width: 6,),
+              const Icon(EvaIcons.pinOutline,size: 20,color: Color(0xFF344264)),
+              const SizedBox(width: 6,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MCText(text: "Titik Awal"),
-                  SizedBox(height: 8,),
-                  MCText(text: origin??"")
+                  const MCText(text: "Titik Awal",color: Color(0xFF344264)),
+                  const SizedBox(height: 8,),
+                  MCText(text: origin??"",fontSize: 14,color: Color(0xFF01133D),)
                 ],
               )
             ],
@@ -60,14 +59,14 @@ class ContentCardFO extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
             children: [
-              Icon(EvaIcons.mapOutline),
+              const Icon(EvaIcons.calendarOutline,size: 20,color: Color(0xFF344264)),
               SizedBox(width: 6,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MCText(text: "Waktu Keberangkatan"),
+                  MCText(text: "Waktu Keberangkatan",color: Color(0xFF344264)),
                   SizedBox(height: 8,),
-                  MCText(text: depatureTime??'')
+                  MCText(text: depatureTime??'',fontSize: 14,color: Color(0xFF01133D))
                 ],
               )
             ],
