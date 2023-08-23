@@ -6,7 +6,7 @@ import 'package:widgetbook/widgetbook.dart';
 class TextFieldStyler {
   WidgetbookUseCase textfieldBook() {
     return WidgetbookUseCase(
-        name: "MCTextField",
+        name: "METextField",
         builder: (context) => Padding(
               padding: const EdgeInsets.only(top: 20, left: 10),
               child: SizedBox(
@@ -76,7 +76,7 @@ class TextFieldStyler {
 
   WidgetbookUseCase textfieldBooknew() {
     return WidgetbookUseCase(
-        name: "MCTextField",
+        name: "METextField",
         builder: (context) => Padding(
               padding: const EdgeInsets.only(top: 20, left: 10),
               child: SizedBox(
@@ -92,7 +92,7 @@ class TextFieldStyler {
                       initialValue: 35,
                       max: 80,
                       min: 20),
-                  child: MCTextfield(
+                  child: METextfield(
                     enabled: context.knobs
                         .boolean(label: "enabled", initialValue: true),
                     hintText: context.knobs.string(
@@ -113,7 +113,7 @@ class TextFieldStyler {
 
   WidgetbookUseCase textfieldBookBottomLine() {
     return WidgetbookUseCase(
-        name: "McEasyTextFieldLine",
+        name: "METextFieldLine",
         builder: (context) => Padding(
               padding: const EdgeInsets.only(top: 20, left: 10),
               child: SizedBox(

@@ -7,8 +7,8 @@ import 'package:widgetbook/widgetbook.dart';
 class PopupStyler {
   WidgetbookUseCase versionUpatePopup() {
     return WidgetbookUseCase(
-      name: "MCDialogVersion",
-      builder: (context) => MCDialogVersion(
+      name: "MEDialogVersion",
+      builder: (context) => MEDialogVersion(
         isForcedUpdate: context.knobs.boolean(
             label: "isForcedUpdate",
             description: "Tampilan untuk forced update atau tidak"),
@@ -25,8 +25,8 @@ class PopupStyler {
 
   WidgetbookUseCase failedDialog() {
     return WidgetbookUseCase(
-      name: "MCFailedDialog",
-      builder: (p0) => MCFailedDialog(
+      name: "MEFailedDialog",
+      builder: (p0) => MEFailedDialog(
         backgroundColor: p0.knobs.list(
             label: "secondaryColor",
             options: colorOption,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
 
-class MCStatusLabel extends StatelessWidget {
-  const MCStatusLabel({
+class MEStatusLabel extends StatelessWidget {
+  const MEStatusLabel({
     super.key,
     required this.label,required this.bgColor,required this.ftColor
   });
@@ -18,7 +18,7 @@ class MCStatusLabel extends StatelessWidget {
         color: bgColor,
         borderRadius: BorderRadius.circular(6)
       ),
-      child: MCText(text: label,color: ftColor,fontWeight: FontWeight.w600,),
+      child: METext(text: label,color: ftColor,fontWeight: FontWeight.w600,),
     );
   }
 }

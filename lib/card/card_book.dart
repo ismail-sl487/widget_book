@@ -49,7 +49,7 @@ class CardStyler {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(child: DeliveryCard(
+              Center(child: MEDeliveryCard(
                 departureTime: p0.knobs.string(label: "departureTime",initialValue: "19 Jul 2023 15:00"),
                 destinationAddress: p0.knobs.string(label: "destinationAddress",initialValue: "Jl. Diponegoro No. FA-45, Surabaya, Jawa Timur, Indonesia"),
                 destinationName: p0.knobs.string(label: "destinationName",initialValue: "Gudang Airlangga"),
@@ -62,8 +62,8 @@ class CardStyler {
   }
 }
 
-class DeliveryCard extends StatelessWidget {
-  const DeliveryCard({
+class MEDeliveryCard extends StatelessWidget {
+  const MEDeliveryCard({
     super.key,
     required this.destinationName,
     required this.statusName,
@@ -89,8 +89,8 @@ class DeliveryCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                MCText(text: destinationName,fontWeight: FontWeight.w600,fontSize: 16,color: Color(0xFF0D4491)),
-                MCStatusLabel(label: statusName,bgColor: statusColor.withOpacity(0.07),ftColor: statusColor),
+                METext(text: destinationName,fontWeight: FontWeight.w600,fontSize: 16,color: Color(0xFF0D4491)),
+                MEStatusLabel(label: statusName,bgColor: statusColor.withOpacity(0.07),ftColor: statusColor),
                 
               ],
             ),
@@ -101,9 +101,9 @@ class DeliveryCard extends StatelessWidget {
             child: SizedBox(width: 220,child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                MCText(text: destinationAddress,height: 1.5,color: Color(0xFF344264),),
+                METext(text: destinationAddress,height: 1.5,color: Color(0xFF344264),),
                 SizedBox(height: 8,),
-                MCText(text: departureTime,height: 1.5,color: Color(0xFF67718B),),
+                METext(text: departureTime,height: 1.5,color: Color(0xFF67718B),),
               ],
             )),
           ),

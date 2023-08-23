@@ -28,8 +28,8 @@ class ContentCardFO extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MCText(text: foNumber??"",fontWeight: FontWeight.w700,fontSize: 18,),
-              MCStatusLabel(label: statusLabel,bgColor: statusBGColor.withOpacity(0.2),ftColor: statusBGColor),
+              METext(text: foNumber??"",fontWeight: FontWeight.w700,fontSize: 18,),
+              MEStatusLabel(label: statusLabel,bgColor: statusBGColor.withOpacity(0.2),ftColor: statusBGColor),
               
             ],
           ),
@@ -46,9 +46,9 @@ class ContentCardFO extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const MCText(text: "Titik Awal",color: Color(0xFF344264)),
+                  const METext(text: "Titik Awal",color: Color(0xFF344264)),
                   const SizedBox(height: 8,),
-                  MCText(text: origin??"",fontSize: 14,color: Color(0xFF01133D),)
+                  METext(text: origin??"",fontSize: 14,color: Color(0xFF01133D),)
                 ],
               )
             ],
@@ -64,9 +64,9 @@ class ContentCardFO extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MCText(text: "Waktu Keberangkatan",color: Color(0xFF344264)),
+                  METext(text: "Waktu Keberangkatan",color: Color(0xFF344264)),
                   SizedBox(height: 8,),
-                  MCText(text: depatureTime??'',fontSize: 14,color: Color(0xFF01133D))
+                  METext(text: depatureTime??'',fontSize: 14,color: Color(0xFF01133D))
                 ],
               )
             ],

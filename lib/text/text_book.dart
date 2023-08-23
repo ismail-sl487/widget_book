@@ -7,7 +7,7 @@ import 'package:widgetbook/widgetbook.dart';
 class TextStyler {
   WidgetbookUseCase text() {
     return WidgetbookUseCase(
-      name: 'MCText',
+      name: 'METext',
       builder: (context) => Text(
         context.knobs.string(
           initialValue: "Lorem ipsum dolor sit amet",
@@ -56,7 +56,7 @@ class TextStyler {
 
   WidgetbookUseCase textRow() {
     return WidgetbookUseCase(
-      name: 'MCTextRow',
+      name: 'METextRow',
       builder: (context) => Row(
         mainAxisAlignment:
             context.knobs.list(label: "mainAxisAligment", options: const [
@@ -68,7 +68,7 @@ class TextStyler {
             MainAxisAlignment.start,
         ]),
         children: [
-          MCText(
+          METext(
             text: context.knobs.string(
                 label: "LText",
                 description: "Untuk mentukan isi text",
@@ -90,7 +90,7 @@ class TextStyler {
                     initialValue: 12)
                 .toDouble(),
           ),
-          MCText(
+          METext(
             text: context.knobs.string(
                 label: "RText",
                 description: "Untuk mentukan isi text",
@@ -111,8 +111,8 @@ class TextStyler {
 
   WidgetbookUseCase textToggle() {
     return WidgetbookUseCase(
-      name: "MCTextToggle",
-      builder: (p0) => MCTextToggle(
+      name: "METextToggle",
+      builder: (p0) => METextToggle(
           title: p0.knobs.string(
               label: "label",
               description: "Merubah judul label toggle",

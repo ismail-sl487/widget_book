@@ -6,7 +6,7 @@ class PermissionStyler {
   WidgetbookUseCase permissionBook() {
     return WidgetbookUseCase(
         name: "MEPermission",
-        builder: (p0) => MCPermissionDialog(
+        builder: (p0) => MEPermissionDialog(
               secondaryColor: p0.knobs
                   .list(label: "secondaryColor", options: colorOption),
               label: p0.knobs.string(

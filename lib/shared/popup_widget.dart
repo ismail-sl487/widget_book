@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mceasy_widget/main.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
 
-class MCDialogVersion extends StatelessWidget {
-  const MCDialogVersion({
+class MEDialogVersion extends StatelessWidget {
+  const MEDialogVersion({
     Key? key,
     this.isForcedUpdate = false,
     this.title = "",
@@ -25,7 +25,7 @@ class MCDialogVersion extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            MCText(
+            METext(
               text: 'Pembaruan Aplikasi',
               fontSize: 16,
               color: color,
@@ -52,7 +52,7 @@ class MCDialogVersion extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 1, top: 6),
           child: Divider(),
         ),
-        MCText(
+        METext(
           text: title,
           fontSize: 14,
           height: 1.5,
@@ -85,7 +85,7 @@ class MCDialogVersion extends StatelessWidget {
                             ),
                             padding: const EdgeInsets.all(8.5),
                             child: Center(
-                              child: MCText(
+                              child: METext(
                                 text: 'Nanti Saja',
                                 color: color,
                                 fontWeight: FontWeight.bold,
@@ -114,7 +114,7 @@ class MCDialogVersion extends StatelessWidget {
                     ),
                     padding: const EdgeInsets.all(8.5),
                     child: const Center(
-                      child: MCText(
+                      child: METext(
                         text: 'Perbarui',
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -131,8 +131,8 @@ class MCDialogVersion extends StatelessWidget {
   }
 }
 
-class MCFailedDialog extends StatelessWidget {
-  const MCFailedDialog({
+class MEFailedDialog extends StatelessWidget {
+  const MEFailedDialog({
     Key? key,
     this.backgroundColor = const Color(0xFFFFFFFF),
     this.backgroundOpacity = const Color(0xFF0D4491),
@@ -192,7 +192,7 @@ class MCFailedDialog extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    MCText(
+                    METext(
                       textAlign: TextAlign.center,
                       text: title,
                       fontWeight: FontWeight.w700,
@@ -203,7 +203,7 @@ class MCFailedDialog extends StatelessWidget {
                       height: 8,
                     ),
                     Center(
-                        child: MCText(
+                        child: METext(
                       text: subtitle,
                       color: Colors.grey,
                       fontWeight: FontWeight.w400,
@@ -237,8 +237,8 @@ class MCFailedDialog extends StatelessWidget {
   }
 }
 
-class MCPermissionDialog extends StatelessWidget {
-  const MCPermissionDialog({
+class MEPermissionDialog extends StatelessWidget {
+  const MEPermissionDialog({
     Key? key,
     this.label = "",
     this.secondaryColor = Colors.black26,
@@ -271,7 +271,7 @@ class MCPermissionDialog extends StatelessWidget {
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
-          child: MCText(
+          child: METext(
             text: label,
             fontSize: 16,
           ),
@@ -283,7 +283,7 @@ class MCPermissionDialog extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () async {},
-                child: const MCText(
+                child: const METext(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                   text: 'CANCEL',
@@ -297,7 +297,7 @@ class MCPermissionDialog extends StatelessWidget {
                     ElevatedButton.styleFrom(backgroundColor: secondaryColor),
                 onPressed: () async {},
                 child: const SizedBox(
-                  child: MCText(
+                  child: METext(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     text: 'ENABLE',

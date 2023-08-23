@@ -4,8 +4,8 @@ library mceasy_widget;
 
 import 'package:flutter/material.dart';
 
-class TextFieldStyles extends StatelessWidget {
-  TextFieldStyles(
+class METextField extends StatelessWidget {
+  METextField(
       {Key? key,
       this.controller,
       this.onChange,
@@ -57,8 +57,8 @@ class TextFieldStyles extends StatelessWidget {
   }
 }
 
-class MCTextfield extends StatelessWidget {
-  const MCTextfield({
+class METextfield extends StatelessWidget {
+  const METextfield({
     Key? key,
     this.width = 80,
     this.borderRadius = 6,

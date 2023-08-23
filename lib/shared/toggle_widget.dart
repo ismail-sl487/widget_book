@@ -5,8 +5,8 @@ import 'package:mceasy_widget/shared/switch_toggle_widget.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
 import 'package:mceasy_widget/theme.dart';
 
-class MCTextToggle extends StatelessWidget {
-  MCTextToggle(
+class METextToggle extends StatelessWidget {
+  METextToggle(
       {Key? key,
       required this.title,
       required this.onChanged,
@@ -27,7 +27,7 @@ class MCTextToggle extends StatelessWidget {
           Container(
             color: Colors.transparent,
             padding: const EdgeInsets.symmetric(vertical: 8),
-            child: MCText(
+            child: METext(
               text: title,
               color: secondaryColor,
             ),

@@ -4,8 +4,8 @@ import 'package:mceasy_widget/shared/text_widget.dart';
 
 import '../theme.dart';
 
-class MCAvatar extends StatelessWidget {
-  const MCAvatar({super.key, this.badgePositioned, this.initial,this.bgcolor,required this.badgeColor,this.images,this.avatarSize});
+class MEAvatar extends StatelessWidget {
+  const MEAvatar({super.key, this.badgePositioned, this.initial,this.bgcolor,required this.badgeColor,this.images,this.avatarSize});
   final PositionBadge? badgePositioned;
   final String? initial;
   final Color? bgcolor;
@@ -39,13 +39,13 @@ class MCAvatar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
               ),
                 child: Center(
-                  child: MCText(text: initial??'',color: bgcolor??Colors.blueAccent,fontWeight: FontWeight.w600,fontSize: avatarLabelSize(size: avatarSize??AvatarSize.medium) ,)
+                  child: METext(text: initial??'',color: bgcolor??Colors.blueAccent,fontWeight: FontWeight.w600,fontSize: avatarLabelSize(size: avatarSize??AvatarSize.medium) ,)
                   
                 ),
             ),
           ),
         ),
-        MCBadge(
+        MEBadge(
           positioned: badgePositioned,
           badgecolor: badgeColor,
           badgeSize: avatarbadgeSize(size: avatarSize??AvatarSize.medium),

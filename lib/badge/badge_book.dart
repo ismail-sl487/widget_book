@@ -8,7 +8,7 @@ class BadgeStyler {
 
   WidgetbookUseCase badgeBook() {
     return WidgetbookUseCase(
-        name: 'MCBadge', builder: (context) {
+        name: 'MEBadge', builder: (context) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -17,7 +17,7 @@ class BadgeStyler {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MCBadge(
+                  MEBadge(
                     labelSize: double.parse(context.knobs.string(label: "labelSize",initialValue: "10")),
                     badgeSize: double.parse(context.knobs.string(label: "badgeSize" , initialValue: "30")),
                     positioned: context.knobs.list(label: 'positioned', options: badgePosition), 
@@ -34,7 +34,7 @@ class BadgeStyler {
 
   WidgetbookUseCase badgeLabelBook() {
     return WidgetbookUseCase(
-        name: 'MCBadgeLabel', builder: (context) {
+        name: 'MEBadgeLabel', builder: (context) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +43,7 @@ class BadgeStyler {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MCBadgeLabel(
+                  MEBadgeLabel(
                     labelSize: double.parse(context.knobs.string(label: "labelSize",initialValue: "10")),
                     badgecolor: context.knobs.list(label: 'badgecoloe', options: colorOption),
                     label: context.knobs.string(label: "label"),

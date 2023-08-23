@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mceasy_widget/theme.dart';
 
-class MCText extends StatelessWidget {
-  const MCText({
+class METext extends StatelessWidget {
+  const METext({
     Key? key,
     this.fontWeight = FontWeight.w400,
     this.color = Colors.black,

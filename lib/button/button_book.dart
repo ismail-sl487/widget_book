@@ -8,7 +8,7 @@ class ButtonStyler {
 
   WidgetbookUseCase button() {
     return WidgetbookUseCase(
-      name: 'MCButton',
+      name: 'MEButton',
       builder: (context) => ElevatedButton.icon(
         icon: context.knobs.boolean(
                 label: "icon",
@@ -55,7 +55,7 @@ class ButtonStyler {
               options: colorOption)),
         ),
         onPressed: () {},
-        label: MCText(
+        label: METext(
 
             text: context.knobs.string(
                 initialValue: "Example Button",
@@ -76,7 +76,7 @@ class ButtonStyler {
 
   WidgetbookUseCase outlineButton() {
     return WidgetbookUseCase(
-      name: 'MCButtonOutline',
+      name: 'MEButtonOutline',
       builder: (context) => OutlinedButton.icon(
         icon: context.knobs.boolean(
                 label: "icon",

@@ -9,9 +9,9 @@ class AvatarStyler {
 
   WidgetbookUseCase avatarBook() {
     return WidgetbookUseCase(
-        name: 'MCAvatar', builder: (context) {
+        name: 'MEAvatar', builder: (context) {
           return Center(child: 
-            MCAvatar(
+            MEAvatar(
               images: context.knobs.string(label: 'images',description: "menggunakan URL atau images lokal \n\nEx : assets/images/avatar.png "),
               badgePositioned: context.knobs.list(label: 'positioned', options: badgePosition),
               bgcolor: context.knobs.list(label: 'bgColor', options: colorOption),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
 import 'package:mceasy_widget/theme.dart';
 
-class MeButton extends StatelessWidget {
-  const MeButton(
+class MEButton extends StatelessWidget {
+  const MEButton(
       {Key? key,
       this.icon,
       this.verticalPadding = 14,
@@ -31,7 +31,7 @@ class MeButton extends StatelessWidget {
         backgroundColor: MaterialStateProperty.all(bgColor),
       ),
       onPressed: onTap,
-      label: MCText(text: label, color: secondaryColor!),
+      label: METext(text: label, color: secondaryColor!),
     );
   }
 }
@@ -65,7 +65,7 @@ class MeButtonOutline extends StatelessWidget {
         backgroundColor: MaterialStateProperty.all(bgColor),
       ),
       onPressed: onTap,
-      label: MCText(text: label, color: secondaryColor!),
+      label: METext(text: label, color: secondaryColor!),
     );
   }
 }

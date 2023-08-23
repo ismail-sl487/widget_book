@@ -38,7 +38,7 @@ class _MyWidgetState extends State<MyWidget> {
 class NotificationStyler {
   WidgetbookUseCase notificationBook() {
     return WidgetbookUseCase(
-        name: "MeNotification", builder: (p0) => const MyWidget());
+        name: "MENotification", builder: (p0) => const MyWidget());
   }
 }
 
@@ -79,7 +79,7 @@ void showToastBar(context, {required String message, required String title}) {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            MCText(
+                            METext(
                               letterSpacing: 0.2,
                               height: 1.5,
                               text: title,

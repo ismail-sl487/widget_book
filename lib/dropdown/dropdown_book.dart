@@ -10,7 +10,7 @@ class DropdownStlyer {
   List<Widget> getData({int dataCount = 0}) {
     List<Widget> widget = [];
     if (dataCount <= 0) {
-      widget.add(const SizedBox(child: MCText(text: "Data Not Found")));
+      widget.add(const SizedBox(child: METext(text: "Data Not Found")));
     } else {
       for (var i = 0; i < dataCount; i++) {
         widget.add(Column(
@@ -22,7 +22,7 @@ class DropdownStlyer {
                 children: const [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 4),
-                    child: MCText(text: "Text", color: primaryColor),
+                    child: METext(text: "Text", color: primaryColor),
                   ),
                 ],
               ),
@@ -59,7 +59,7 @@ class DropdownStlyer {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: TextFieldStyles(
+                    child: METextField(
                       hintName: "Cari",
                       onChange: (String newValue) {},
                     ),
@@ -99,7 +99,7 @@ class DropdownStlyer {
                               initialValue: 0)
                           .toInt() !=
                       0,
-                  child: const Center(child: MCText(text: "View All Result")),
+                  child: const Center(child: METext(text: "View All Result")),
                 ),
               ),
             )

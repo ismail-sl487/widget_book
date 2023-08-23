@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
 import 'package:mceasy_widget/theme.dart';
 
-class MCBadge extends StatelessWidget {
-  const MCBadge({
+class MEBadge extends StatelessWidget {
+  const MEBadge({
     Key? key,
     required this.positioned,
     required this.badgecolor,
@@ -46,7 +46,7 @@ class MCBadge extends StatelessWidget {
             color: badgecolor,
             borderRadius: BorderRadius.circular(100)
           ),
-          child: label != null? Align(alignment: Alignment.center,child: MCText(textAlign: TextAlign.center,text: label??'',fontSize: labelSize,color: labelColor,)) : null,
+          child: label != null? Align(alignment: Alignment.center,child: METext(textAlign: TextAlign.center,text: label??'',fontSize: labelSize,color: labelColor,)) : null,
         ),
       )
     );
@@ -54,8 +54,8 @@ class MCBadge extends StatelessWidget {
 }
 
 
-class MCBadgeLabel extends StatelessWidget {
-  const MCBadgeLabel({super.key,required this.badgecolor,this.label,this.labelSize = 14,this.labelColor = Colors.black87,});
+class MEBadgeLabel extends StatelessWidget {
+  const MEBadgeLabel({super.key,required this.badgecolor,this.label,this.labelSize = 14,this.labelColor = Colors.black87,});
   final String? label;
   final Color badgecolor;
   final Color labelColor;
@@ -81,7 +81,7 @@ class MCBadgeLabel extends StatelessWidget {
             color: badgecolor,
             borderRadius: BorderRadius.circular(100)
           ),
-          child: label != null? Align(alignment: Alignment.center,child: MCText(textAlign: TextAlign.center,text: label??'',fontSize: labelSize,color: labelColor,)) : null,
+          child: label != null? Align(alignment: Alignment.center,child: METext(textAlign: TextAlign.center,text: label??'',fontSize: labelSize,color: labelColor,)) : null,
         ),
       );
   }
