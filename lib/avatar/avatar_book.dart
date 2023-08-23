@@ -12,12 +12,12 @@ class AvatarStyler {
         name: 'MCAvatar', builder: (context) {
           return Center(child: 
             MCAvatar(
-              images: context.knobs.text(label: 'images',description: "menggunakan URL atau images lokal \n\nEx : assets/images/avatar.png "),
-              badgePositioned: context.knobs.options(label: 'positioned', options: badgePosition),
-              bgcolor: context.knobs.options(label: 'bgColor', options: colorOption),
-              initial: context.knobs.text(label: 'initial',initialValue: 'PL'),
-              badgeColor: context.knobs.options(label: 'badgeColor', options: colorOption),
-              avatarSize: context.knobs.options(label: 'avatarSize', options: avatarSizer),
+              images: context.knobs.string(label: 'images',description: "menggunakan URL atau images lokal \n\nEx : assets/images/avatar.png "),
+              badgePositioned: context.knobs.list(label: 'positioned', options: badgePosition),
+              bgcolor: context.knobs.list(label: 'bgColor', options: colorOption),
+              initial: context.knobs.string(label: 'initial',initialValue: 'PL'),
+              badgeColor: context.knobs.list(label: 'badgeColor', options: colorOption),
+              avatarSize: context.knobs.list(label: 'avatarSize', options: avatarSizer),
             )
           );
         });

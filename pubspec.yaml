@@ -16,10 +16,10 @@ repository: https://github.com/ismail-sl487/widget-book
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.0+3
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
+  sdk: '>=3.0.3 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -35,7 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  widgetbook: ^2.4.1
+  widgetbook: ^3.2.0
   eva_icons_flutter: ^3.1.0
   bot_toast: ^4.0.3
 

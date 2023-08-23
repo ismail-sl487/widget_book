@@ -4,7 +4,6 @@ import 'package:mceasy_widget/badge/badge_book.dart';
 import 'package:mceasy_widget/card/card_book.dart';
 import 'package:mceasy_widget/textfield/text_field_book.dart';
 import 'package:mceasy_widget/button/button_book.dart';
-import 'package:mceasy_widget/driver_app/permission_book.dart';
 import 'package:mceasy_widget/dropdown/dropdown_book.dart';
 import 'package:mceasy_widget/notification/notification_book.dart';
 import 'package:mceasy_widget/popup/popup.dart';
@@ -36,12 +35,8 @@ class HotreloadWidgetbook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Widgetbook.material(
-      categories: [
-        WidgetbookCategory(
-          name: 'Global Widgets',
-          widgets: [
-            WidgetbookComponent(
+    return Widgetbook.material(directories: [
+      WidgetbookComponent(
               name: 'Avatar',
               useCases: [AvatarStyler().avatarBook()],
             ),
@@ -77,7 +72,7 @@ class HotreloadWidgetbook extends StatelessWidget {
             WidgetbookComponent(
               name: 'TextField',
               useCases: [
-                TextFieldStyler().textfieldBooknew(),
+                TextFieldStyler().textfieldBook(),
                 TextFieldStyler().textfieldBookBottomLine(),
               ],
             ),
@@ -94,28 +89,9 @@ class HotreloadWidgetbook extends StatelessWidget {
             ),
             WidgetbookComponent(
               name: 'Foregorund Notification',
-              useCases: [NotificationStyler().notificationBook()],
-            ),
-          ],
-        ),
-        WidgetbookCategory(name: "Driver App ", widgets: [
-          WidgetbookComponent(
-            name: 'Permission',
-            useCases: [PermissionStyler().permissionBook()],
-          ),
-        ])
-      ],
-      themes: [
-        WidgetbookTheme(
-          name: 'Light',
-          data: ThemeData.light(),
-        ),
-        WidgetbookTheme(
-          name: 'Dark',
-          data: ThemeData.dark(),
-        ),
-      ],
-      appInfo: AppInfo(name: 'McEasy Widget Book'),
-    );
+              useCases: [NotificationStyler().notificationBook()])
+    ],addons: [
+      
+    ]);
   }
 }

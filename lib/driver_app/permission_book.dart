@@ -8,13 +8,13 @@ class PermissionStyler {
         name: "MEPermission",
         builder: (p0) => MCPermissionDialog(
               secondaryColor: p0.knobs
-                  .options(label: "secondaryColor", options: colorOption),
-              label: p0.knobs.text(
+                  .list(label: "secondaryColor", options: colorOption),
+              label: p0.knobs.string(
                   label: "label",
                   description: "Memberikan title pada popup",
                   initialValue:
                       "This app need permission location. Please choose allow all the time in permission location"),
-              icon: p0.knobs.options(label: "icon", options: iconTheme),
+              icon: p0.knobs.list(label: "icon", options: iconTheme),
             ));
   }
 }

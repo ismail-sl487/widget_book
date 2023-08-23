@@ -73,7 +73,7 @@ class DropdownStlyer {
             ),
             ...getData(
                 dataCount: p0.knobs
-                    .slider(
+                    .double.slider(
                         label: "data",
                         description:
                             "Untuk mengeteahui apakah sedang kosong atau tidak",
@@ -90,7 +90,7 @@ class DropdownStlyer {
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Visibility(
                   visible: p0.knobs
-                          .slider(
+                          .double.slider(
                               label: "data",
                               description:
                                   "Untuk mengeteahui apakah sedang kosong atau tidak",

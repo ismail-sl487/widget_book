@@ -20,19 +20,19 @@ class CardStyler {
             children: [
               Center(child: MECard(widget: 
                 ContentCardFO(
-                    foNumber: p0.knobs.text(label: "foNumber",initialValue: "FO-0001"),
-                    statusLabel: p0.knobs.text(label: "statusLabel",initialValue: "Perjalanan"),
-                    statusBGColor: p0.knobs.options(
+                    foNumber: p0.knobs.string(label: "foNumber",initialValue: "FO-0001"),
+                    statusLabel: p0.knobs.string(label: "statusLabel",initialValue: "Perjalanan"),
+                    statusBGColor: p0.knobs.list(
                     label: "statusBGColor",
                     description: "Mengganti warna pada font button",
                     options: const [
-                      Option<Color>(label: "#F64A33", value: Color(0XFFF64A33)),
-                      Option<Color>(label: "#FFFFFF", value: Color(0xFFFFFFFF)),
-                      Option<Color>(label: "#0D4491", value: Color(0xFF0D4491)),
-                      Option<Color>(label: "#439677", value: Color(0XFF439677)),
+                      Color(0XFFF64A33),
+                      Color(0xFFFFFFFF),
+                      Color(0xFF0D4491),
+                      Color(0XFF439677),
                     ]),
-                    depatureTime: p0.knobs.text(label: "depatureTime",initialValue: "21 Jan 2023, 13:00"),
-                    origin: p0.knobs.text(label: "origin",initialValue: "Pool Surabaya"),
+                    depatureTime: p0.knobs.string(label: "depatureTime",initialValue: "21 Jan 2023, 13:00"),
+                    origin: p0.knobs.string(label: "origin",initialValue: "Pool Surabaya"),
                 )
               )),
             ],
@@ -50,11 +50,11 @@ class CardStyler {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(child: DeliveryCard(
-                departureTime: p0.knobs.text(label: "departureTime",initialValue: "19 Jul 2023 15:00"),
-                destinationAddress: p0.knobs.text(label: "destinationAddress",initialValue: "Jl. Diponegoro No. FA-45, Surabaya, Jawa Timur, Indonesia"),
-                destinationName: p0.knobs.text(label: "destinationName",initialValue: "Gudang Airlangga"),
-                statusName: p0.knobs.text(label: "statusName",initialValue: "Ambil"),
-                statusColor: p0.knobs.options(label: "statusColor", options: colorOption),
+                departureTime: p0.knobs.string(label: "departureTime",initialValue: "19 Jul 2023 15:00"),
+                destinationAddress: p0.knobs.string(label: "destinationAddress",initialValue: "Jl. Diponegoro No. FA-45, Surabaya, Jawa Timur, Indonesia"),
+                destinationName: p0.knobs.string(label: "destinationName",initialValue: "Gudang Airlangga"),
+                statusName: p0.knobs.string(label: "statusName",initialValue: "Ambil"),
+                statusColor: p0.knobs.list(label: "statusColor", options: colorOption),
               )),
             ],
           ),

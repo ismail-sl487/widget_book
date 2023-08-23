@@ -4,15 +4,13 @@ import 'package:mceasy_widget/theme.dart';
 class MCText extends StatelessWidget {
   const MCText({
     Key? key,
-    required this.text,
     this.fontWeight = FontWeight.w400,
     this.color = Colors.black,
     this.fontSize = 12,
     this.letterSpacing = 0.5,
     this.height = 1,
     this.overflow,
-    this.maxLine,
-    this.textAlign,
+    this.maxLine, required this.text, this.textAlign,
   }) : super(key: key);
 
   final String text;

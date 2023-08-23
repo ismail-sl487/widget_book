@@ -14,27 +14,27 @@ class ButtonStyler {
                 label: "icon",
                 description: "Untuk menampilkan icon (Non-Param)")
             ? Icon(
-                context.knobs.options(label: "iconButton", options: iconTheme),
-                color: context.knobs.options(
+                context.knobs.list(label: "iconButton", options: iconTheme),
+                color: context.knobs.list(
                     label: "secondaryColor",
                     description: "Mengganti warna pada font button",
                     options: const [
-                      Option<Color>(label: "#FFFFFF", value: Color(0xFFFFFFFF)),
-                      Option<Color>(label: "#0D4491", value: Color(0xFF0D4491)),
-                      Option<Color>(label: "#F64A33", value: Color(0XFFF64A33)),
-                      Option<Color>(label: "#439677", value: Color(0XFF439677)),
+                      Color(0xFFFFFFFF),
+                       Color(0xFF0D4491),
+                      Color(0XFFF64A33),
+                       Color(0XFF439677),
                     ]),
               )
             : const SizedBox(),
         style: ButtonStyle(
           padding: MaterialStateProperty.all(EdgeInsets.only(
-              top: context.knobs.slider(
+              top: context.knobs.double.slider(
                   label: "verticalPading",
                   initialValue: 14,
                   description: "Merubah ukuran padding vertikal",
                   min: 10,
                   max: 50),
-              bottom: context.knobs.slider(
+              bottom: context.knobs.double.slider(
                   label: "verticalPading",
                   initialValue: 14,
                   description: "Merubah ukuran padding vertikal",
@@ -44,30 +44,31 @@ class ButtonStyler {
               left: 8)),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(context.knobs
-                  .number(
+                  .double.input(
                       initialValue: 6,
                       label: "borderRadius",
                       description: "Membuat radius pada button")
                   .toDouble()))),
-          backgroundColor: MaterialStateProperty.all(context.knobs.options(
+          backgroundColor: MaterialStateProperty.all(context.knobs.list(
               label: "bgColor",
               description: "Mengganti warna pada background button",
               options: colorOption)),
         ),
         onPressed: () {},
         label: MCText(
-            text: context.knobs.text(
+
+            text: context.knobs.string(
                 initialValue: "Example Button",
                 label: "label",
                 description: "Berfungsi untuk membuat label pada tombol"),
-            color: context.knobs.options(
+            color: context.knobs.list(
                 label: "secondaryColor",
                 description: "Mengganti warna pada font button",
                 options: const [
-                  Option<Color>(label: "#FFFFFF", value: Color(0xFFFFFFFF)),
-                  Option<Color>(label: "#0D4491", value: Color(0xFF0D4491)),
-                  Option<Color>(label: "#F64A33", value: Color(0XFFF64A33)),
-                  Option<Color>(label: "#439677", value: Color(0XFF439677)),
+                  Color(0xFFFFFFFF),
+                  Color(0xFF0D4491),
+                  Color(0XFFF64A33),
+                  Color(0XFF439677),
                 ])),
       ),
     );
@@ -81,27 +82,27 @@ class ButtonStyler {
                 label: "icon",
                 description: "Untuk menampilkan icon (Non-Param)")
             ? Icon(
-                context.knobs.options(label: "iconButton", options: iconTheme),
-                color: context.knobs.options(
+                context.knobs.list(label: "iconButton", options: iconTheme),
+                color: context.knobs.list(
                     label: "secondaryColor",
                     description: "Mengganti warna pada font button",
                     options: const [
-                      Option<Color>(label: "#FFFFFF", value: Color(0xFFFFFFFF)),
-                      Option<Color>(label: "#0D4491", value: Color(0xFF0D4491)),
-                      Option<Color>(label: "#F64A33", value: Color(0XFFF64A33)),
-                      Option<Color>(label: "#439677", value: Color(0XFF439677)),
+                    Color(0xFFFFFFFF),
+                    Color(0xFF0D4491),
+                    Color(0XFFF64A33),
+                    Color(0XFF439677),
                     ]),
               )
             : const SizedBox(),
         style: ButtonStyle(
           padding: MaterialStateProperty.all(EdgeInsets.only(
-              top: context.knobs.slider(
+              top: context.knobs.double.slider(
                   label: "verticalPading",
                   initialValue: 14,
                   description: "Merubah ukuran padding vertikal",
                   min: 10,
                   max: 50),
-              bottom: context.knobs.slider(
+              bottom: context.knobs.double.slider(
                   label: "verticalPading",
                   initialValue: 14,
                   description: "Merubah ukuran padding vertikal",
@@ -111,14 +112,14 @@ class ButtonStyler {
               left: 8)),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(context.knobs
-                  .number(
+                  .double.input(
                       initialValue: 6,
                       label: "borderRadius",
                       description: "Membuat radius pada button")
                   .toDouble()))),
           side: MaterialStateProperty.all(
             BorderSide(
-                color: context.knobs.options(
+                color: context.knobs.list(
                     label: "secondaryColor",
                     description: "Mengganti warna pada border button",
                     options: colorOption),
@@ -128,12 +129,12 @@ class ButtonStyler {
         ),
         onPressed: () {},
         label: Text(
-            context.knobs.text(
+            context.knobs.string(
                 initialValue: "Example Button",
                 label: "label",
                 description: "Berfungsi untuk membuat label pada tombol"),
             style: TextStyle(
-                color: context.knobs.options(
+                color: context.knobs.list(
                     label: "secondaryColor",
                     description: "Mengganti warna pada font button",
                     options: colorOption))),

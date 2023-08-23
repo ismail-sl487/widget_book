@@ -9,43 +9,43 @@ class TextStyler {
     return WidgetbookUseCase(
       name: 'MCText',
       builder: (context) => Text(
-        context.knobs.text(
+        context.knobs.string(
           initialValue: "Lorem ipsum dolor sit amet",
           label: "text",
         ),
         style: TextStyle(
-          fontWeight: context.knobs.options(
+          fontWeight: context.knobs.list(
               label: "fontWeight",
               options: textWeight,
               description: "merubah ketebalan font"),
-          color: context.knobs.options(
+          color: context.knobs.list(
               label: "fontColor",
               description: "Mengganti warna pada font",
               options: colorOption),
           fontSize: context.knobs
-              .number(label: "fontSize", description: "Merubah ukuran font")
+              .double.input(label: "fontSize", description: "Merubah ukuran font")
               .toDouble(),
-          letterSpacing: context.knobs.slider(
+          letterSpacing: context.knobs.double.slider(
               label: "leterSpaccing",
               description: "Menambah jarak spasi pada text",
               initialValue: 0.5,
               min: 0,
               max: 5),
-          height: context.knobs.slider(
+          height: context.knobs.double.slider(
               label: "height",
               description: "Menambah jarak kebawah antar text",
               initialValue: 1,
               min: 0,
               max: 5),
-          overflow: context.knobs.options(label: "Overflow", options: const [
-            Option(label: "clip", value: TextOverflow.clip),
-            Option(label: "ellipsis", value: TextOverflow.ellipsis),
-            Option(label: "fade", value: TextOverflow.fade),
-            Option(label: "visible", value: TextOverflow.visible),
+          overflow: context.knobs.list(label: "Overflow", options: const [
+            TextOverflow.clip,
+            TextOverflow.ellipsis,
+            TextOverflow.fade,
+            TextOverflow.visible,
           ]),
         ),
         maxLines: context.knobs
-            .number(
+            .double.input(
                 label: "maxLine",
                 description: "Melakukan setting maksimal baris",
                 initialValue: 15)
@@ -59,50 +59,50 @@ class TextStyler {
       name: 'MCTextRow',
       builder: (context) => Row(
         mainAxisAlignment:
-            context.knobs.options(label: "mainAxisAligment", options: const [
-          Option(label: "center", value: MainAxisAlignment.center),
-          Option(label: "end", value: MainAxisAlignment.end),
-          Option(label: "spaceAround", value: MainAxisAlignment.spaceAround),
-          Option(label: "spaceBetween", value: MainAxisAlignment.spaceBetween),
-          Option(label: "spaceEvenly", value: MainAxisAlignment.spaceEvenly),
-          Option(label: "start", value: MainAxisAlignment.start),
+            context.knobs.list(label: "mainAxisAligment", options: const [
+            MainAxisAlignment.center,
+            MainAxisAlignment.end,
+            MainAxisAlignment.spaceAround,
+            MainAxisAlignment.spaceBetween,
+            MainAxisAlignment.spaceEvenly,
+            MainAxisAlignment.start,
         ]),
         children: [
           MCText(
-            text: context.knobs.text(
+            text: context.knobs.string(
                 label: "LText",
                 description: "Untuk mentukan isi text",
                 initialValue: "Perusahaan"),
-            color: context.knobs.options(
+            color: context.knobs.list(
                 label: "LColor",
                 options: colorOption,
                 description: "Mengubah warna font"),
             fontSize: context.knobs
-                .slider(label: "LFontSize", initialValue: 12, min: 9, max: 26),
+                .double.slider(label: "LFontSize", initialValue: 12, min: 9, max: 26),
             fontWeight: context.knobs
-                .options(label: "LTextWeight", options: textWeight),
+                .list(label: "LTextWeight", options: textWeight),
           ),
           SizedBox(
             width: context.knobs
-                .number(
+                .double.input(
                     label: "spacing",
                     description: "Memberi jarak antar text",
                     initialValue: 12)
                 .toDouble(),
           ),
           MCText(
-            text: context.knobs.text(
+            text: context.knobs.string(
                 label: "RText",
                 description: "Untuk mentukan isi text",
                 initialValue: " : PT ABC mantab"),
-            color: context.knobs.options(
+            color: context.knobs.list(
                 label: "RColor",
                 options: colorOption,
                 description: "Mengubah warna font"),
             fontSize: context.knobs
-                .slider(label: "RFontSize", initialValue: 12, min: 9, max: 26),
+                .double.slider(label: "RFontSize", initialValue: 12, min: 9, max: 26),
             fontWeight: context.knobs
-                .options(label: "RTextWeight", options: textWeight),
+                .list(label: "RTextWeight", options: textWeight),
           ),
         ],
       ),
@@ -113,7 +113,7 @@ class TextStyler {
     return WidgetbookUseCase(
       name: "MCTextToggle",
       builder: (p0) => MCTextToggle(
-          title: p0.knobs.text(
+          title: p0.knobs.string(
               label: "label",
               description: "Merubah judul label toggle",
               initialValue: "Example Toggle"),
