@@ -1,6 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:mceasy_widget/shared/card_widget.dart';
+import 'package:mceasy_widget/shared/constant.dart';
 import 'package:mceasy_widget/shared/content_status_fo_widget.dart';
 import 'package:mceasy_widget/shared/popup_widget.dart';
 import 'package:mceasy_widget/shared/status_label_widget.dart';
@@ -12,30 +13,35 @@ class CardStyler {
   WidgetbookUseCase cardBook() {
     return WidgetbookUseCase(
         name: "MECardStatusFO",
-        builder: (p0) => Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(child: MECard(widget: 
-                ContentCardFO(
-                    foNumber: p0.knobs.string(label: "foNumber",initialValue: "FO-0001"),
-                    statusLabel: p0.knobs.string(label: "statusLabel",initialValue: "Perjalanan"),
-                    statusBGColor: p0.knobs.list(
-                    label: "statusBGColor",
-                    description: "Mengganti warna pada font button",
-                    options: const [
-                      Color(0XFFF64A33),
-                      Color(0xFFFFFFFF),
-                      Color(0xFF0D4491),
-                      Color(0XFF439677),
-                    ]),
-                    depatureTime: p0.knobs.string(label: "depatureTime",initialValue: "21 Jan 2023, 13:00"),
-                    origin: p0.knobs.string(label: "origin",initialValue: "Pool Surabaya"),
-                )
-              )),
-            ],
+        builder: (p0) => Container(
+            width: double.infinity,
+              height: double.infinity,
+              color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(child: MECard(widget: 
+                  ContentCardFO(
+                      foNumber: p0.knobs.string(label: "foNumber",initialValue: "FO-0001"),
+                      statusLabel: p0.knobs.string(label: "statusLabel",initialValue: "Perjalanan"),
+                      statusBGColor: p0.knobs.list(
+                      label: "statusBGColor",
+                      description: "Mengganti warna pada font button",
+                      options: const [
+                        Color(0XFFF64A33),
+                        Color(0xFFFFFFFF),
+                        Color(0xFF0D4491),
+                        Color(0XFF439677),
+                      ]),
+                      depatureTime: p0.knobs.string(label: "depatureTime",initialValue: "21 Jan 2023, 13:00"),
+                      origin: p0.knobs.string(label: "origin",initialValue: "Pool Surabaya"),
+                  )
+                )),
+              ],
+            ),
           ),
         ));
   }
@@ -43,22 +49,61 @@ class CardStyler {
   WidgetbookUseCase deliveryCardBook() {
     return WidgetbookUseCase(
         name: "MEDeliveryCard",
-        builder: (p0) => Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(child: MEDeliveryCard(
-                departureTime: p0.knobs.string(label: "departureTime",initialValue: "19 Jul 2023 15:00"),
-                destinationAddress: p0.knobs.string(label: "destinationAddress",initialValue: "Jl. Diponegoro No. FA-45, Surabaya, Jawa Timur, Indonesia"),
-                destinationName: p0.knobs.string(label: "destinationName",initialValue: "Gudang Airlangga"),
-                statusName: p0.knobs.string(label: "statusName",initialValue: "Ambil"),
-                statusColor: p0.knobs.list(label: "statusColor", options: colorOption),
-              )),
-            ],
+        builder: (p0) => Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(child: MEDeliveryCard(
+                  departureTime: p0.knobs.string(label: "departureTime",initialValue: "19 Jul 2023 15:00"),
+                  destinationAddress: p0.knobs.string(label: "destinationAddress",initialValue: "Jl. Diponegoro No. FA-45, Surabaya, Jawa Timur, Indonesia"),
+                  destinationName: p0.knobs.string(label: "destinationName",initialValue: "Gudang Airlangga"),
+                  statusName: p0.knobs.string(label: "statusName",initialValue: "Ambil"),
+                  statusColor: p0.knobs.list(label: "statusColor", options: colorOption),
+                )),
+              ],
+            ),
           ),
         ));
+
+    
+  }
+  WidgetbookUseCase meCardBook(){
+    return WidgetbookUseCase(name: "MECard", builder: (context) {
+      return Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.white,
+      child: Center(child: Padding(
+        padding: const EdgeInsets.only(left: 30,right: 30),
+        child: MECard(
+        boxBorder: Border.all(color: Colors.transparent),
+        widget: METext(text: "ini tes")),
+      )));
+    },);
+  }
+
+  WidgetbookUseCase meCardBookShadow(){
+    return WidgetbookUseCase(name: "MECardShadow", builder: (context) {
+      return Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.white,
+      child: Center(child: Padding(
+        padding: const EdgeInsets.only(left: 30,right: 30),
+        child: MECardShadow(
+        blurRadius: context.knobs.double.slider(label: "blurRadius",max: 20,min: 1,initialValue: 1),
+        shadowColor: context.knobs.list(label: 'shadowColor', options: colorOption),
+        shadowHorizontal: context.knobs.double.input(label:'shadowHorizontal',initialValue: 4),
+        shadowVertical: context.knobs.double.input(label: 'shadowVertical',initialValue: 0),
+        widget: METext(text: "ini tes")),
+      )));
+    },);
   }
 }
 

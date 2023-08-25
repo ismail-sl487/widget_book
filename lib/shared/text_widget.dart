@@ -32,6 +32,7 @@ class METext extends StatelessWidget {
         letterSpacing: letterSpacing,
         height: height,
         overflow: overflow,
+        fontFamily: 'GothaPro'
       ),
       maxLines: maxLine,
       textAlign: textAlign,

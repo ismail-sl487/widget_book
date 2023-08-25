@@ -38,74 +38,83 @@ class DropdownStlyer {
   WidgetbookUseCase dropdownBook() {
     return WidgetbookUseCase(
       name: "MECDropdown",
-      builder: (p0) => PopupMenuItem(
-        enabled: false, // DISABLED THIS ITEM
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Container(
-              width:
-                  MediaQuery.of(navigatorKey.currentState!.context).size.width,
-              height: 40,
-              padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.only(bottom: 10),
-              decoration: BoxDecoration(
-                border: Border.all(color: primaryColor),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(4),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: METextField(
-                      hintName: "Cari",
-                      onChange: (String newValue) {},
+      builder: (p0) => Container(
+        width: double.infinity,
+          height: double.infinity,
+          color: Colors.white,
+        child: Center(
+          child: PopupMenuItem(
+            enabled: false, // DISABLED THIS ITEM
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                  width:
+                      MediaQuery.of(navigatorKey.currentState!.context).size.width,
+                  height: 40,
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(bottom: 10),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: primaryColor),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(4),
                     ),
                   ),
-                  const Icon(EvaIcons.search, size: 15)
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            ...getData(
-                dataCount: p0.knobs
-                    .double.slider(
-                        label: "data",
-                        description:
-                            "Untuk mengeteahui apakah sedang kosong atau tidak",
-                        min: 0,
-                        max: 5,
-                        initialValue: 0)
-                    .toInt()),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                width: MediaQuery.of(navigatorKey.currentState!.context)
-                    .size
-                    .width,
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Visibility(
-                  visible: p0.knobs
-                          .double.slider(
-                              label: "data",
-                              description:
-                                  "Untuk mengeteahui apakah sedang kosong atau tidak",
-                              min: 0,
-                              max: 5,
-                              initialValue: 0)
-                          .toInt() !=
-                      0,
-                  child: const Center(child: METext(text: "View All Result")),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: METextField(
+                          hintName: "Cari",
+                          onChange: (String newValue) {},
+                        ),
+                      ),
+                      const Icon(EvaIcons.search, size: 15)
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+                const SizedBox(
+                  height: 10,
+                ),
+                ...getData(
+                    dataCount: p0.knobs
+                        .double.slider(
+                            label: "data",
+                            description:
+                                "Untuk mengeteahui apakah sedang kosong atau tidak",
+                            min: 0,
+                            max: 5,
+                            initialValue: 0)
+                        .toInt()),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    width: MediaQuery.of(navigatorKey.currentState!.context)
+                        .size
+                        .width,
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Visibility(
+                      visible: p0.knobs
+                              .double.slider(
+                                  label: "data",
+                                  description:
+                                      "Untuk mengeteahui apakah sedang kosong atau tidak",
+                                  min: 0,
+                                  max: 5,
+                                  initialValue: 0)
+                              .toInt() !=
+                          0,
+                      child: const Center(child: METext(text: "View All Result")),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
 }
+
+

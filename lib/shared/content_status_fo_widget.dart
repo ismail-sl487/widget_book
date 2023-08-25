@@ -1,7 +1,9 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:mceasy_widget/shared/status_label_widget.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
+import 'package:mceasy_widget/shared/theme.dart';
 
 class ContentCardFO extends StatelessWidget {
   const ContentCardFO({
@@ -35,11 +37,12 @@ class ContentCardFO extends StatelessWidget {
           ),
         ),
         SizedBox(height: 12,),
-        Divider(height: 1,),
+        Divider(color: Pallets.primaryBlue20,thickness: 0.4),
         SizedBox(height: 16,),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Icon(EvaIcons.pinOutline,size: 20,color: Color(0xFF344264)),
               const SizedBox(width: 6,),
@@ -58,6 +61,7 @@ class ContentCardFO extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Icon(EvaIcons.calendarOutline,size: 20,color: Color(0xFF344264)),
               SizedBox(width: 6,),
@@ -76,4 +80,3 @@ class ContentCardFO extends StatelessWidget {
     ),);
   }
 }
-

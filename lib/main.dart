@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mceasy_widget/avatar/avatar_book.dart';
 import 'package:mceasy_widget/badge/badge_book.dart';
 import 'package:mceasy_widget/card/card_book.dart';
+import 'package:mceasy_widget/empty/empty_book.dart';
+import 'package:mceasy_widget/icons/icon_book.dart';
+import 'package:mceasy_widget/snackbar/snackbar_book.dart';
 import 'package:mceasy_widget/textfield/text_field_book.dart';
 import 'package:mceasy_widget/button/button_book.dart';
 import 'package:mceasy_widget/dropdown/dropdown_book.dart';
@@ -36,62 +39,88 @@ class HotreloadWidgetbook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook.material(directories: [
+            
       WidgetbookComponent(
-              name: 'Avatar',
-              useCases: [AvatarStyler().avatarBook()],
-            ),
-            WidgetbookComponent(
-              name: 'Badge',
-              useCases: [
-                BadgeStyler().badgeBook(),
-                BadgeStyler().badgeLabelBook(),
-              ],
-            ),
-            WidgetbookComponent(
-              name: 'Card',
-              useCases: [
-                CardStyler().cardBook(),
-                CardStyler().deliveryCardBook()
-              ],
-            ),
-            WidgetbookComponent(
-              name: 'Buttons',
-              useCases: [
-                ButtonStyler().button(),
-                ButtonStyler().outlineButton()
-              ],
-            ),
-            WidgetbookComponent(
-              name: 'Text',
-              useCases: [
-                TextStyler().text(),
-                TextStyler().textRow(),
-                TextStyler().textToggle(),
-              ],
-            ),
-            WidgetbookComponent(
-              name: 'TextField',
-              useCases: [
-                TextFieldStyler().textfieldBook(),
-                TextFieldStyler().textfieldBookBottomLine(),
-              ],
-            ),
-            WidgetbookComponent(
-              name: 'Popup Dialog',
-              useCases: [
-                PopupStyler().versionUpatePopup(),
-                PopupStyler().failedDialog(),
-              ],
-            ),
-            WidgetbookComponent(
-              name: 'Drop Down',
-              useCases: [DropdownStlyer().dropdownBook()],
-            ),
-            WidgetbookComponent(
-              name: 'Foregorund Notification',
-              useCases: [NotificationStyler().notificationBook()])
+        name: 'Empty Widget',
+        useCases: [
+          EmpptyStyler().emptyBook()
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Icon',
+        useCases: [IconStyler().deliveryCardBook()],
+      ),
+      WidgetbookComponent(
+        name: 'Avatar',
+        useCases: [AvatarStyler().avatarBook()],
+      ),
+      WidgetbookComponent(
+        name: 'Badge',
+        useCases: [
+          BadgeStyler().badgeBook(),
+          BadgeStyler().badgeLabelBook(),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Snackbar',
+        useCases: [
+
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Card',
+        useCases: [
+          CardStyler().cardBook(),
+          CardStyler().deliveryCardBook(),
+          CardStyler().meCardBook(),
+          CardStyler().meCardBookShadow(),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Buttons',
+        useCases: [
+          ButtonStyler().button(),
+          ButtonStyler().outlineButton()
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Text',
+        useCases: [
+          TextStyler().text(),
+          TextStyler().textRow(),
+          TextStyler().textToggle(),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'TextField',
+        useCases: [
+          TextFieldStyler().textfieldBook(),
+          TextFieldStyler().textfieldBookBottomLine(),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Popup Dialog',
+        useCases: [
+          PopupStyler().versionUpatePopup(),
+          PopupStyler().failedDialog(),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Drop Down',
+        useCases: [DropdownStlyer().dropdownBook()],
+      ),
+      WidgetbookComponent(
+        name: 'Foregorund Notification',
+        useCases: [NotificationStyler().notificationBook()]
+      )
     ],addons: [
-      
+      DeviceFrameAddon(
+        devices: [
+            Devices.ios.iPhoneSE,
+            Devices.ios.iPhone13,
+        ],
+        initialDevice: Devices.ios.iPhone13,
+    ),
     ]);
   }
 }
