@@ -64,9 +64,9 @@ class DropdownStlyer {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
-                        child: METextField(
-                          hintName: "Cari",
-                          onChange: (String newValue) {},
+                        child: METextfield(
+                          hintText: "Cari",
+                          onChanged: (String newValue) {},
                         ),
                       ),
                       const Icon(EvaIcons.search, size: 15)
