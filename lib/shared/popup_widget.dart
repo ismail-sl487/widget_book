@@ -218,7 +218,7 @@ class MEFailedDialog extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pop(navigatorKey.currentState!.context);
+                Navigator.pop(context);
               },
               child: const Align(
                 alignment: Alignment.topRight,
