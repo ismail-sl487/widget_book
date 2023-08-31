@@ -156,7 +156,6 @@ class MEFailedDialog extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         SizedBox(
-          width: MediaQuery.of(navigatorKey.currentState!.context).size.width,
           child: Stack(children: [
             Padding(
               padding: const EdgeInsets.all(24.0),
