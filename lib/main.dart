@@ -39,12 +39,9 @@ class HotreloadWidgetbook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook.material(directories: [
-            
       WidgetbookComponent(
         name: 'Empty Widget',
-        useCases: [
-          EmpptyStyler().emptyBook()
-        ],
+        useCases: [EmpptyStyler().emptyBook()],
       ),
       WidgetbookComponent(
         name: 'Icon',
@@ -63,9 +60,7 @@ class HotreloadWidgetbook extends StatelessWidget {
       ),
       WidgetbookComponent(
         name: 'Snackbar',
-        useCases: [
-
-        ],
+        useCases: [],
       ),
       WidgetbookComponent(
         name: 'Card',
@@ -78,10 +73,7 @@ class HotreloadWidgetbook extends StatelessWidget {
       ),
       WidgetbookComponent(
         name: 'Buttons',
-        useCases: [
-          ButtonStyler().button(),
-          ButtonStyler().outlineButton()
-        ],
+        useCases: [ButtonStyler().button(), ButtonStyler().outlineButton()],
       ),
       WidgetbookComponent(
         name: 'Text',
@@ -89,6 +81,7 @@ class HotreloadWidgetbook extends StatelessWidget {
           TextStyler().text(),
           TextStyler().textRow(),
           TextStyler().textToggle(),
+          TextStyler().textExmple(),
         ],
       ),
       WidgetbookComponent(
@@ -110,17 +103,16 @@ class HotreloadWidgetbook extends StatelessWidget {
         useCases: [DropdownStlyer().dropdownBook()],
       ),
       WidgetbookComponent(
-        name: 'Foregorund Notification',
-        useCases: [NotificationStyler().notificationBook()]
-      )
-    ],addons: [
+          name: 'Foregorund Notification',
+          useCases: [NotificationStyler().notificationBook()])
+    ], addons: [
       DeviceFrameAddon(
         devices: [
-            Devices.ios.iPhoneSE,
-            Devices.ios.iPhone13,
+          Devices.ios.iPhoneSE,
+          Devices.ios.iPhone13,
         ],
         initialDevice: Devices.ios.iPhone13,
-    ),
+      ),
     ]);
   }
 }

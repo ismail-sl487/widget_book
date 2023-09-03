@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mceasy_widget/shared/text.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
 import 'package:mceasy_widget/shared/toggle_widget.dart';
 import 'package:mceasy_widget/theme.dart';
@@ -10,8 +11,8 @@ class TextStyler {
       name: 'METext',
       builder: (context) => Container(
         width: double.infinity,
-              height: double.infinity,
-              color: Colors.white,
+        height: double.infinity,
+        color: Colors.white,
         child: Center(
           child: Text(
             context.knobs.string(
@@ -27,8 +28,8 @@ class TextStyler {
                   label: "fontColor",
                   description: "Mengganti warna pada font",
                   options: colorOption),
-              fontSize: context.knobs
-                  .double.input(label: "fontSize", description: "Merubah ukuran font")
+              fontSize: context.knobs.double
+                  .input(label: "fontSize", description: "Merubah ukuran font")
                   .toDouble(),
               letterSpacing: context.knobs.double.slider(
                   label: "leterSpaccing",
@@ -49,8 +50,8 @@ class TextStyler {
                 TextOverflow.visible,
               ]),
             ),
-            maxLines: context.knobs
-                .double.input(
+            maxLines: context.knobs.double
+                .input(
                     label: "maxLine",
                     description: "Melakukan setting maksimal baris",
                     initialValue: 15)
@@ -66,18 +67,18 @@ class TextStyler {
       name: 'METextRow',
       builder: (context) => Container(
         width: double.infinity,
-              height: double.infinity,
-              color: Colors.white,
+        height: double.infinity,
+        color: Colors.white,
         child: Center(
           child: Row(
             mainAxisAlignment:
                 context.knobs.list(label: "mainAxisAligment", options: const [
-                MainAxisAlignment.center,
-                MainAxisAlignment.end,
-                MainAxisAlignment.spaceAround,
-                MainAxisAlignment.spaceBetween,
-                MainAxisAlignment.spaceEvenly,
-                MainAxisAlignment.start,
+              MainAxisAlignment.center,
+              MainAxisAlignment.end,
+              MainAxisAlignment.spaceAround,
+              MainAxisAlignment.spaceBetween,
+              MainAxisAlignment.spaceEvenly,
+              MainAxisAlignment.start,
             ]),
             children: [
               METext(
@@ -89,14 +90,14 @@ class TextStyler {
                     label: "LColor",
                     options: colorOption,
                     description: "Mengubah warna font"),
-                fontSize: context.knobs
-                    .double.slider(label: "LFontSize", initialValue: 12, min: 9, max: 26),
+                fontSize: context.knobs.double.slider(
+                    label: "LFontSize", initialValue: 12, min: 9, max: 26),
                 fontWeight: context.knobs
                     .list(label: "LTextWeight", options: textWeight),
               ),
               SizedBox(
-                width: context.knobs
-                    .double.input(
+                width: context.knobs.double
+                    .input(
                         label: "spacing",
                         description: "Memberi jarak antar text",
                         initialValue: 12)
@@ -111,8 +112,8 @@ class TextStyler {
                     label: "RColor",
                     options: colorOption,
                     description: "Mengubah warna font"),
-                fontSize: context.knobs
-                    .double.slider(label: "RFontSize", initialValue: 12, min: 9, max: 26),
+                fontSize: context.knobs.double.slider(
+                    label: "RFontSize", initialValue: 12, min: 9, max: 26),
                 fontWeight: context.knobs
                     .list(label: "RTextWeight", options: textWeight),
               ),
@@ -123,13 +124,23 @@ class TextStyler {
     );
   }
 
+  WidgetbookUseCase textExmple() {
+    return WidgetbookUseCase(
+        name: 'ExampleText',
+        builder: (context) => Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.white,
+            child: Center(child: ExampleText())));
+  }
+
   WidgetbookUseCase textToggle() {
     return WidgetbookUseCase(
       name: "METextToggle",
       builder: (p0) => Container(
         width: double.infinity,
-              height: double.infinity,
-              color: Colors.white,
+        height: double.infinity,
+        color: Colors.white,
         child: Center(
           child: METextToggle(
               title: p0.knobs.string(
@@ -137,11 +148,11 @@ class TextStyler {
                   description: "Merubah judul label toggle",
                   initialValue: "Example Toggle"),
               onChanged: (result) {
-                result =
-                    p0.knobs.boolean(label: "value", description: "Merubah toggle");
+                result = p0.knobs
+                    .boolean(label: "value", description: "Merubah toggle");
               },
-              value:
-                  p0.knobs.boolean(label: "value", description: "Merubah toggle")),
+              value: p0.knobs
+                  .boolean(label: "value", description: "Merubah toggle")),
         ),
       ),
     );
