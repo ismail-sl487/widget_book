@@ -13,7 +13,7 @@ class METext extends StatelessWidget {
       this.maxLine,
       required this.text,
       this.textAlign,
-      this.fontFamily = 'GothaPro'})
+      this.fontFamily = 'GothamPro'})
       : super(key: key);
 
   final String text;
@@ -61,7 +61,7 @@ class CommonTextStyle {
         overflow: overflow ?? TextOverflow.ellipsis,
         color: color ?? primaryColor,
         fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: 'GothaPro',
+        fontFamily: 'GothamPro',
         fontSize: fontSize ?? 14);
   }
 }

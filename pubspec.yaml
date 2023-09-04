@@ -82,23 +82,20 @@ flutter:
       fonts:
         - asset: assets/fonts/mceasyicons.ttf
         
-    - family: GothaPro
+    - family: GothamPro
       fonts:
         - asset: assets/fonts/GothaPro-Regular.otf
-          weight: 400
-        - asset: assets/fonts/GothamProMediumItalic.ttf
-          weight: 500
-        - asset: assets/fonts/GothaProMed.otf
-          weight: 600
-        - asset: assets/fonts/GothamProMediumItalic.ttf
-          weight: 700
     
-    - family: GothaProMed
+    - family: GothamProMed
       fonts:
         - asset: assets/fonts/GothaProMed.otf
+
+    - family: GothamProBold
+      fonts:
+        - asset: assets/fonts/GothaPro-Bold.otf
         
     
-  #   - family: Schyler
+  #   - fa`mily: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
@@ -108,6 +105,6 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+  #`
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

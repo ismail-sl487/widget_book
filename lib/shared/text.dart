@@ -20,12 +20,13 @@ class ExampleText extends StatelessWidget {
         ),
         METext(
           text: "Lorem ipsum dolor sit amet",
-          fontWeight: FontWeight.w600,
-          fontSize: 12,
+          fontSize: 19,
+          fontFamily: 'GothamProMed',
         ),
         METext(
           text: "Lorem ipsum dolor sit amet",
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.w600,
+          fontSize: 19,
         ),
       ],
     );
