@@ -31,7 +31,7 @@ class ContentCardFO extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              METext(text: foNumber??"",fontWeight: FontWeight.normal ,fontSize: 18,),
+              METext(text: foNumber??"",fontWeight: FontWeight.w600 ,fontSize: 18,),
               MEStatusLabel(label: statusLabel,bgColor: statusBGColor.withOpacity(0.2),ftColor: statusBGColor),
               
             ],
