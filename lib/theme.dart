@@ -36,16 +36,13 @@ double getAvatarSize({required AvatarSize size}){
   }
 }
 
-String setFontSize(CommonFontSize size){
-  switch (size) {
-    case CommonFontSize.regular:
-      return 'GothamPro';
-    case CommonFontSize.medium:
-      return 'GothamProMed';
-    case CommonFontSize.bold:
-      return 'GothamProBold';
-    default:
-     return 'GothamPro';
+String setFontSize(FontWeight size){
+  if (size == FontWeight.w500 || size == FontWeight.w600 || size == FontWeight.normal) {
+    return 'GothamProMed';
+  }else if (size == FontWeight.w700 || size == FontWeight.w800 || size == FontWeight.w900 || size == FontWeight.bold){
+    return 'GothamProBold';
+  }else{
+    return 'GothamPro';
   }
 }
 

@@ -12,8 +12,7 @@ class METext extends StatelessWidget {
       this.overflow,
       this.maxLine,
       required this.text,
-      this.textAlign,
-      this.fontFamily = CommonFontSize.regular})
+      this.textAlign,})
       : super(key: key);
 
   final String text;
@@ -23,7 +22,6 @@ class METext extends StatelessWidget {
   final TextOverflow? overflow;
   final int? maxLine;
   final TextAlign? textAlign;
-  final CommonFontSize fontFamily;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +33,7 @@ class METext extends StatelessWidget {
           letterSpacing: letterSpacing,
           height: height,
           overflow: overflow,
-          fontFamily: setFontSize(fontFamily)),
+          fontFamily: setFontSize(fontWeight)),
       maxLines: maxLine,
       textAlign: textAlign,
     );

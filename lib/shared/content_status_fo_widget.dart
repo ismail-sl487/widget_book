@@ -31,7 +31,7 @@ class ContentCardFO extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              METext(text: foNumber??"",fontFamily: CommonFontSize.medium ,fontSize: 18,),
+              METext(text: foNumber??"",fontWeight: FontWeight.normal ,fontSize: 18,),
               MEStatusLabel(label: statusLabel,bgColor: statusBGColor.withOpacity(0.2),ftColor: statusBGColor),
               
             ],
@@ -45,14 +45,14 @@ class ContentCardFO extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(EvaIcons.pinOutline,size: 20,color: Color(0xFF344264)),
+              Icon(EvaIcons.pinOutline,size: 20,color: Pallets.navy100),
               const SizedBox(width: 6,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const METext(text: "Titik Awal",color: Color(0xFF344264)),
+                   METext(text: "Titik Awal",color: Pallets.navy100),
                   const SizedBox(height: 8,),
-                  METext(text: origin??"",fontSize: 14,color: Color(0xFF01133D),)
+                  METext(text: origin??"",fontSize: 14,color: Pallets.navy100,)
                 ],
               )
             ],

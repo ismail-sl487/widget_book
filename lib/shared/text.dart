@@ -22,7 +22,7 @@ class ExampleText extends StatelessWidget {
         METext(
           text: "Lorem ipsum dolor sit amet",
           fontSize: 19,
-          fontFamily: CommonFontSize.medium,
+          fontWeight: FontWeight.w500,
         ),
         METext(
           text: "Lorem ipsum dolor sit amet",
