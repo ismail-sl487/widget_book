@@ -54,6 +54,7 @@ class CommonTextStyle {
     final double? heightSpacingText,
     final double? letterSpacing,
     final TextOverflow? overflow,
+    final String? fontFamily = 'GothamPro',
   }) {
     return TextStyle(
         height: heightSpacingText,
@@ -61,7 +62,7 @@ class CommonTextStyle {
         overflow: overflow ?? TextOverflow.ellipsis,
         color: color ?? primaryColor,
         fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: 'GothamPro',
+        fontFamily: fontFamily,
         fontSize: fontSize ?? 14);
   }
 }
