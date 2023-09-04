@@ -23,7 +23,8 @@ class CardStyler {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(child: MECard(widget: 
+                Center(child: MECard(
+                widget: 
                   ContentCardFO(
                       foNumber: p0.knobs.string(label: "foNumber",initialValue: "FO-0001"),
                       statusLabel: p0.knobs.string(label: "statusLabel",initialValue: "Perjalanan"),

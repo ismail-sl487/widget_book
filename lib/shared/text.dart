@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
+import 'package:mceasy_widget/theme.dart';
 
 class ExampleText extends StatelessWidget {
   const ExampleText({super.key});
@@ -21,7 +22,7 @@ class ExampleText extends StatelessWidget {
         METext(
           text: "Lorem ipsum dolor sit amet",
           fontSize: 19,
-          fontFamily: 'GothamProMed',
+          fontFamily: CommonFontSize.medium,
         ),
         METext(
           text: "Lorem ipsum dolor sit amet",

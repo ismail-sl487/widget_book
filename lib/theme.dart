@@ -14,6 +14,10 @@ enum AvatarSize{
  extraLarge,large,medium,small;
 }
 
+enum CommonFontSize{
+  regular,medium,bold
+}
+
 
 //TODO: JADIKAN DART 3 GUYS
 
@@ -29,6 +33,19 @@ double getAvatarSize({required AvatarSize size}){
       return 96;
     default:
       return 48;
+  }
+}
+
+String setFontSize(CommonFontSize size){
+  switch (size) {
+    case CommonFontSize.regular:
+      return 'GothamPro';
+    case CommonFontSize.medium:
+      return 'GothamProMed';
+    case CommonFontSize.bold:
+      return 'GothamProBold';
+    default:
+     return 'GothamPro';
   }
 }
 

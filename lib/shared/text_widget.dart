@@ -13,7 +13,7 @@ class METext extends StatelessWidget {
       this.maxLine,
       required this.text,
       this.textAlign,
-      this.fontFamily = 'GothamPro'})
+      this.fontFamily = CommonFontSize.regular})
       : super(key: key);
 
   final String text;
@@ -23,20 +23,19 @@ class METext extends StatelessWidget {
   final TextOverflow? overflow;
   final int? maxLine;
   final TextAlign? textAlign;
-  final String? fontFamily;
+  final CommonFontSize fontFamily;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       style: TextStyle(
-          fontWeight: fontWeight,
           color: color,
           fontSize: fontSize,
           letterSpacing: letterSpacing,
           height: height,
           overflow: overflow,
-          fontFamily: fontFamily),
+          fontFamily: setFontSize(fontFamily)),
       maxLines: maxLine,
       textAlign: textAlign,
     );

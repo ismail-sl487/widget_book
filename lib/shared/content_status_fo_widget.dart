@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:mceasy_widget/shared/status_label_widget.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
 import 'package:mceasy_widget/shared/theme.dart';
+import 'package:mceasy_widget/theme.dart';
 
 class ContentCardFO extends StatelessWidget {
   const ContentCardFO({
@@ -30,15 +31,15 @@ class ContentCardFO extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              METext(text: foNumber??"",fontWeight: FontWeight.w700,fontSize: 18,),
+              METext(text: foNumber??"",fontFamily: CommonFontSize.medium ,fontSize: 18,),
               MEStatusLabel(label: statusLabel,bgColor: statusBGColor.withOpacity(0.2),ftColor: statusBGColor),
               
             ],
           ),
         ),
-        SizedBox(height: 12,),
+        const SizedBox(height: 12,),
         Divider(color: Pallets.primaryBlue20,thickness: 0.4),
-        SizedBox(height: 16,),
+        const SizedBox(height: 16,),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
@@ -57,7 +58,7 @@ class ContentCardFO extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 15,),
+       const SizedBox(height: 15,),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
