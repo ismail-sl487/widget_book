@@ -43,7 +43,7 @@ class METext extends StatelessWidget {
 class CommonTextStyle {
   static TextStyle style({
     final double? fontSize,
-    final FontWeight? fontWeight,
+    final FontWeight? fontWeight = FontWeight.w400,
     final Color? color,
     final int? maxLines,
     final double? lineHeight,
@@ -58,8 +58,7 @@ class CommonTextStyle {
         letterSpacing: letterSpacing,
         overflow: overflow ?? TextOverflow.ellipsis,
         color: color ?? primaryColor,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily,
+        fontFamily: setFontSize(fontWeight!),
         fontSize: fontSize ?? 14);
   }
 }
