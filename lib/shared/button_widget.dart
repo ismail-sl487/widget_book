@@ -11,6 +11,7 @@ class MEButton extends StatelessWidget {
       this.bgColor = primaryColor,
       this.secondaryColor = Colors.white,
       required this.onTap,
+      this.labelFontWeight = FontWeight.w400,
       this.label = ""})
       : super(key: key);
   final String label;
@@ -18,7 +19,7 @@ class MEButton extends StatelessWidget {
   final double verticalPadding, borderRadius;
   final Color? bgColor, secondaryColor;
   final Function() onTap;
-
+  final FontWeight labelFontWeight;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
@@ -31,7 +32,7 @@ class MEButton extends StatelessWidget {
         backgroundColor: MaterialStateProperty.all(bgColor),
       ),
       onPressed: onTap,
-      label: METext(text: label, color: secondaryColor!),
+      label: METext(text: label, color: secondaryColor!,fontWeight: labelFontWeight),
     );
   }
 }
