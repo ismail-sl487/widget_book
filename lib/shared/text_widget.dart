@@ -75,7 +75,7 @@ class METext extends StatelessWidget {
               letterSpacing: letterSpacing,
               heightSpacingText: height,
               lineHeight: lineHeight,
-              color: color ?? Pallets.navy80,
+              color: color ?? Pallets.navy100,
               fontWeight: fontWeight ?? FontWeight.w400,
               fontSize: fontSize ?? 14)),
     );
