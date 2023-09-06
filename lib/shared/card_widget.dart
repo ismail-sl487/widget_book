@@ -39,6 +39,7 @@ class MECardShadow extends StatelessWidget {
     this.blurRadius = 4,
     this.shadowColor,
     this.shadowHorizontal = 0,
+    this.borderRadius = 8,
     this.shadowVertical = 3,
     required this.widget,
   }) : super(key: key);
@@ -49,7 +50,7 @@ class MECardShadow extends StatelessWidget {
   final Color? shadowColor;
   final double shadowVertical;
   final double shadowHorizontal;
-  
+  final double borderRadius;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,7 +59,7 @@ class MECardShadow extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         // border: boxBorder ?? Border.all(width: 1,color: Color(0xFFEBECEF)),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: [
           BoxShadow(blurRadius: blurRadius,color: shadowColor ?? Pallets.primaryBlue20 ,offset: Offset(shadowHorizontal, shadowVertical))
         ]
