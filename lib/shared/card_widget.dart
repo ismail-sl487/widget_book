@@ -5,12 +5,14 @@ class MECard extends StatelessWidget {
   const MECard({
     Key? key,
     this.boxBorder,
+    this.borderRadius = 8,
     this.width = 300,
     required this.widget,
   }) : super(key: key);
   final BoxBorder? boxBorder;
   final Widget widget;
   final double width;
+  final double borderRadius;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +21,7 @@ class MECard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         border: boxBorder ?? Border.all(width: 1,color: Color(0xFFEBECEF)),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: [
           // BoxShadow(blurRadius: 4,color: Color(0xFFd3d3e9).withOpacity(0.2),offset: Offset(0, 3))
         ]
