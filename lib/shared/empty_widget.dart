@@ -5,10 +5,11 @@ class MEEmptyWidget extends StatelessWidget {
   const MEEmptyWidget({
     this.title = 'Tidak ada list Bag.',
     this.subTitle,
+    this.image = 'assets/images/empty_state.png',
     Key? key,
   }) : super(key: key);
 
-  final String? title,subTitle;
+  final String? title,subTitle,image;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class MEEmptyWidget extends StatelessWidget {
     crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Image.asset('assets/images/empty_state.png'),
+      Image.asset(image!),
       const SizedBox(
         height: 12,
       ),
