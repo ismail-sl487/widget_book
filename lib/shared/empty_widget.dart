@@ -6,7 +6,7 @@ class MEEmptyWidget extends StatelessWidget {
   const MEEmptyWidget({
     this.title = 'Tidak ada list Bag.',
     this.subTitle,
-    this.widthImage = 120,
+    this.widthImage = 230,
     this.image = 'assets/images/empty_state.png',
     Key? key,
   }) : super(key: key);
@@ -50,7 +50,7 @@ class MEEmptyBoldWidged extends StatelessWidget {
   const MEEmptyBoldWidged({
     this.title = 'Tidak ada list Bag.',
     this.subTitle,
-    this.widthImage = 120,
+    this.widthImage = 230,
     this.image = 'assets/images/empty_state.png',
     this.children,
     Key? key,
