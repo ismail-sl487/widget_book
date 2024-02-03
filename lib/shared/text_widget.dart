@@ -77,6 +77,7 @@ class METext extends StatelessWidget {
               lineHeight: lineHeight,
               color: color ?? Pallets.navy100,
               fontWeight: fontWeight ?? FontWeight.w400,
+              fontFamily:setFontSize(fontWeight!) ,
               fontSize: fontSize ?? 14)),
     );
   }
