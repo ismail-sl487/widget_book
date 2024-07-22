@@ -14,6 +14,7 @@ class ContentCardFO extends StatelessWidget {
     required this.statusBGColor,
     this.depatureTime,
     this.origin,
+    this.originMaxLine,
   });
 
   final String? foNumber;
@@ -21,6 +22,7 @@ class ContentCardFO extends StatelessWidget {
   final Color statusBGColor;
   final String? origin;
   final String? depatureTime;
+  final int? originMaxLine;
 
   @override
   Widget build(BuildContext context) {
@@ -47,13 +49,15 @@ class ContentCardFO extends StatelessWidget {
             children: [
               Icon(EvaIcons.pinOutline,size: 20,color: Pallets.navy100),
               const SizedBox(width: 6,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                   METext(text: "Titik Awal",color: Pallets.navy100),
-                  const SizedBox(height: 8,),
-                  METext(text: origin??"",fontSize: 14,color: Pallets.navy100,)
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    METext(text: "Titik Awal",color: Pallets.navy100),
+                    const SizedBox(height: 8,),
+                    METext(text: origin??"",fontSize: 14,color: Pallets.navy100,maxLines: originMaxLine,)
+                  ],
+                ),
               )
             ],
           ),

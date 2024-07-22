@@ -39,6 +39,7 @@ class CardStyler {
                       ]),
                       depatureTime: p0.knobs.string(label: "depatureTime",initialValue: "21 Jan 2023, 13:00"),
                       origin: p0.knobs.string(label: "origin",initialValue: "Pool Surabaya"),
+                      originMaxLine: p0.knobs.double.input(label: 'originMaxLine',initialValue: 1).toInt(),
                   )
                 )),
               ],
