@@ -49,7 +49,7 @@ class METextfield extends StatelessWidget {
         enabled: enabled,
         keyboardType: keyboardType,
         maxLength: maxLength,
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+        inputFormatters: keyboardType == TextInputType.number ? [FilteringTextInputFormatter.digitsOnly] : null,
         decoration: InputDecoration(
           contentPadding: contentPadding,
           prefixIcon: prefixIcon,
