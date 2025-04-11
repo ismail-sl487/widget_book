@@ -21,6 +21,7 @@ class METextfield extends StatelessWidget {
     this.textAlign,
     this.minLines = 1,
     this.onChanged,
+    this.textAlignVertical,
     this.contentPadding = const EdgeInsets.only(left: 13, top: 6),
     this.fillColor = Colors.white,
   }) : super(key: key);
@@ -30,6 +31,7 @@ class METextfield extends StatelessWidget {
   final Widget? prefixIcon, suffixIcon;
   final String hintText;
   final Color? fillColor, secondaryColor;
+  final TextAlignVertical? textAlignVertical;
   final TextInputType? keyboardType;
   final int? maxLength, maxLines, minLines;
   final EdgeInsetsGeometry contentPadding;
@@ -48,6 +50,7 @@ class METextfield extends StatelessWidget {
         minLines: minLines,
         enabled: enabled,
         keyboardType: keyboardType,
+        textAlignVertical: textAlignVertical ?? TextAlignVertical.center,
         maxLength: maxLength,
         inputFormatters: keyboardType == TextInputType.number ? [FilteringTextInputFormatter.digitsOnly] : null,
         decoration: InputDecoration(
