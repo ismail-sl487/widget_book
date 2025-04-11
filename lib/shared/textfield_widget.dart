@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class METextfield extends StatelessWidget {
   const METextfield({
@@ -48,6 +49,7 @@ class METextfield extends StatelessWidget {
         enabled: enabled,
         keyboardType: keyboardType,
         maxLength: maxLength,
+        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         decoration: InputDecoration(
           contentPadding: contentPadding,
           prefixIcon: prefixIcon,
