@@ -50,7 +50,7 @@ class METextfield extends StatelessWidget {
         controller: controller,
         maxLines: maxLines,
         minLines: minLines,
-        style: const TextStyle(fontSize: 14),
+        style: TextStyle(fontSize: fontSize ?? 14),
         enabled: enabled,
         keyboardType: keyboardType,
         textAlignVertical: textAlignVertical ?? TextAlignVertical.center,
@@ -63,7 +63,7 @@ class METextfield extends StatelessWidget {
           hintText: hintText,
           filled: filled,
           fillColor: fillColor,
-          hintStyle: const TextStyle(fontSize: 12),
+          hintStyle: TextStyle(fontSize: fontSize ?? 12),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius!),
             borderSide: BorderSide(color: secondaryColor ?? const Color(0xFF99A1B1), width: 1),
