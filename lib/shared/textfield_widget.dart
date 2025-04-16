@@ -69,6 +69,10 @@ class METextfield extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius!),
             borderSide: BorderSide(color: secondaryColor ?? const Color(0xFF99A1B1), width: 1),
           ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius!),
+            borderSide: BorderSide(color: secondaryColor ?? const Color(0xFF99A1B1), width: 1),
+          ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius!),
           ),
