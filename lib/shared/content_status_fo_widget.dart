@@ -1,10 +1,8 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mceasy_widget/shared/status_label_widget.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
 import 'package:mceasy_widget/shared/theme.dart';
-import 'package:mceasy_widget/theme.dart';
 
 class ContentCardFO extends StatelessWidget {
   const ContentCardFO({
@@ -13,6 +11,7 @@ class ContentCardFO extends StatelessWidget {
     required this.statusLabel,
     required this.statusBGColor,
     this.depatureTime,
+    this.referenceNumber,
     this.origin,
     this.originMaxLine,
   });
@@ -23,6 +22,7 @@ class ContentCardFO extends StatelessWidget {
   final String? origin;
   final String? depatureTime;
   final int? originMaxLine;
+  final String? referenceNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +32,29 @@ class ContentCardFO extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: referenceNumber != null ? CrossAxisAlignment.center : CrossAxisAlignment.start,
             children: [
-              METext(text: foNumber??"",fontWeight: FontWeight.w600 ,fontSize: 18,),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    METext(text: foNumber??"",fontWeight: FontWeight.w600 ,fontSize: 18,),
+                    Visibility(
+                      visible: referenceNumber != null,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top :2.0),
+                        child: METext(text: referenceNumber ?? "",fontSize: 12,maxLines: 1,color: Pallets.navy40,),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               MEStatusLabel(label: statusLabel,bgColor: statusBGColor.withOpacity(0.2),ftColor: statusBGColor),
               
             ],
           ),
         ),
-        const SizedBox(height: 12,),
+        const SizedBox(height: 8,),
         Divider(color: Pallets.primaryBlue20,thickness: 0.4),
         const SizedBox(height: 16,),
         Padding(
