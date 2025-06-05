@@ -41,6 +41,7 @@ import 'package:mceasy_widget/theme.dart';
 //   }
 // }
 
+
 class METext extends StatelessWidget {
   final String text;
   final double? fontSize;
@@ -68,6 +69,7 @@ class METext extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       maxLines: maxLines,
+      overflow: TextOverflow.ellipsis,
       textAlign: textAlign ?? TextAlign.left,
       text: TextSpan(
           text: text,
@@ -75,6 +77,7 @@ class METext extends StatelessWidget {
               letterSpacing: letterSpacing,
               heightSpacingText: height,
               lineHeight: lineHeight,
+              overflow: TextOverflow.ellipsis,
               color: color ?? Pallets.navy100,
               fontWeight: fontWeight ?? FontWeight.w400,
               fontFamily:setFontSize(fontWeight!) ,
