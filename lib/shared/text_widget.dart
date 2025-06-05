@@ -69,7 +69,7 @@ class METext extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       maxLines: maxLines,
-      overflow: TextOverflow.ellipsis,
+      overflow: maxLines == 1 ? TextOverflow.ellipsis : TextOverflow.visible,
       textAlign: textAlign ?? TextAlign.left,
       text: TextSpan(
           text: text,
@@ -77,7 +77,7 @@ class METext extends StatelessWidget {
               letterSpacing: letterSpacing,
               heightSpacingText: height,
               lineHeight: lineHeight,
-              overflow: TextOverflow.ellipsis,
+              overflow: maxLines == 1 ?  TextOverflow.ellipsis : null,
               color: color ?? Pallets.navy100,
               fontWeight: fontWeight ?? FontWeight.w400,
               fontFamily:setFontSize(fontWeight!) ,
