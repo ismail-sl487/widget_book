@@ -3,13 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:mceasy_widget/shared/status_label_widget.dart';
 import 'package:mceasy_widget/shared/text_widget.dart';
 import 'package:mceasy_widget/shared/theme.dart';
+import 'package:super_tooltip/super_tooltip.dart';
+
+
+
+
 
 class ContentCardFO extends StatelessWidget {
-  const ContentCardFO({
+  ContentCardFO({
     super.key,
     this.foNumber,
     required this.statusLabel,
     required this.statusBGColor,
+    required this.controller,
     this.depatureTime,
     this.referenceNumber,
     this.origin,
@@ -22,6 +28,7 @@ class ContentCardFO extends StatelessWidget {
   final String? origin;
   final String? depatureTime;
   final int? originMaxLine;
+  final SuperTooltipController? controller;
   final String? referenceNumber;
 
   @override
@@ -32,7 +39,7 @@ class ContentCardFO extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: referenceNumber == null? CrossAxisAlignment.center : CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: Column(
@@ -41,11 +48,45 @@ class ContentCardFO extends StatelessWidget {
                     METext(text: foNumber??"",fontWeight: FontWeight.w600 ,fontSize: 18,),
                     Visibility(
                       visible: referenceNumber != null,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top :2.0),
-                        child: METext(text: referenceNumber ?? "",fontSize: 12,maxLines: 1,color: Pallets.navy40,),
+                      child: IntrinsicWidth(
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                            Container(
+                              constraints: BoxConstraints(maxWidth: 200),
+                              child: METext(
+                              text: referenceNumber ?? "",
+                              fontSize: 10,
+                              maxLines: 1,
+                              ),
+                            ),
+                              Visibility(
+                                visible:  !isSingleLine(referenceNumber??'',TextStyle(fontSize: 16), 200),
+                                child: GestureDetector(
+                                  onLongPress : (){
+                                    controller?.showTooltip();
+                                  },
+                                  child: SuperTooltip(
+                                    controller: controller,
+                                    showBarrier: true,
+                                    barrierColor: Colors.transparent,
+                                    shadowColor: Pallets.navy40.withOpacity(0.5),
+                                    content: METext(text: referenceNumber??''),
+                                    child: Container(
+                                      child: Icon(MceasyIcons.outline_info, size: 15)
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
