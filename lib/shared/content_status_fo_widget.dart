@@ -87,16 +87,15 @@ class ContentCardFO extends StatelessWidget {
             children: [
               const Icon(EvaIcons.calendarOutline,size: 20,color: Color(0xFF344264)),
               const SizedBox(width: 6,),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    METext(text: "Waktu Keberangkatan",color: Color(0xFF344264)),
-                    SizedBox(height: 8,),
-                    METext(text: depatureTime??'',fontSize: 14,color: Color(0xFF01133D))
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  METext(text: "Waktu Keberangkatan",color: Color(0xFF344264)),
+                  SizedBox(height: 8,),
+                  METext(text: depatureTime??'',fontSize: 14,color: Color(0xFF01133D))
+                ],
               ),
+              const SizedBox(width: 10,),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -111,12 +110,14 @@ class ContentCardFO extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                          Container(
-                            constraints: BoxConstraints(maxWidth: 130),
-                            child: METext(
-                            text: referenceNumber??'-',
-                            fontSize: 12,
-                            maxLines: 1,
+                          Expanded(
+                            child: Container(
+                              constraints: BoxConstraints(maxWidth: 130),
+                              child: METext(
+                              text: referenceNumber??'-',
+                              fontSize: 12,
+                              maxLines: 1,
+                              ),
                             ),
                           ),
                           Visibility(
