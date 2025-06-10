@@ -17,7 +17,7 @@ class ContentCardFO extends StatelessWidget {
     this.foNumber,
     required this.statusLabel,
     required this.statusBGColor,
-    required this.controller,
+    this.controller,
     this.depatureTime,
     this.referenceNumber,
     this.origin,
