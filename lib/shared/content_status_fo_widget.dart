@@ -141,3 +141,13 @@ class ContentCardFO extends StatelessWidget {
     ),);
   }
 }
+
+bool isSingleLine(String text, TextStyle style, double maxWidth) {
+  final textPainter = TextPainter(
+    text: TextSpan(text: text, style: style),
+    maxLines: 1,
+    textDirection: ui.TextDirection.ltr,
+  )..layout(maxWidth: maxWidth);
+  
+  return !textPainter.didExceedMaxLines;
+}
