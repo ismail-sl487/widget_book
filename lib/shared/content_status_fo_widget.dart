@@ -48,52 +48,11 @@ class ContentCardFO extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     METext(text: foNumber??"",fontWeight: FontWeight.w600 ,fontSize: 18,),
-                    Visibility(
-                      visible: referenceNumber != null,
-                      child: IntrinsicWidth(
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                            Container(
-                              constraints: BoxConstraints(maxWidth: 200),
-                              child: METext(
-                              text: referenceNumber ?? "",
-                              fontSize: 10,
-                              maxLines: 1,
-                              ),
-                            ),
-                              Visibility(
-                                visible:  !isSingleLine(referenceNumber??'',TextStyle(fontSize: 16), 200),
-                                child: GestureDetector(
-                                  onLongPress : (){
-                                    controller?.showTooltip();
-                                  },
-                                  child: SuperTooltip(
-                                    controller: controller,
-                                    showBarrier: true,
-                                    barrierColor: Colors.transparent,
-                                    shadowColor: Pallets.navy40.withOpacity(0.5),
-                                    content: METext(text: referenceNumber??''),
-                                    child: Container(
-                                      child: Icon(MceasyIcons.outline_info, size: 15)
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
+                    
                   ],
                 ),
               ),
               MEStatusLabel(label: statusLabel,bgColor: statusBGColor.withOpacity(0.2),ftColor: statusBGColor),
-              
             ],
           ),
         ),
@@ -127,14 +86,66 @@ class ContentCardFO extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Icon(EvaIcons.calendarOutline,size: 20,color: Color(0xFF344264)),
-              SizedBox(width: 6,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  METext(text: "Waktu Keberangkatan",color: Color(0xFF344264)),
-                  SizedBox(height: 8,),
-                  METext(text: depatureTime??'',fontSize: 14,color: Color(0xFF01133D))
-                ],
+              const SizedBox(width: 6,),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    METext(text: "Waktu Keberangkatan",color: Color(0xFF344264)),
+                    SizedBox(height: 8,),
+                    METext(text: depatureTime??'',fontSize: 14,color: Color(0xFF01133D))
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    METext(text: "Shipment Ref",color: Color(0xFF344264)),
+                    SizedBox(height: 8,),
+                    IntrinsicWidth(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                          Container(
+                            constraints: BoxConstraints(maxWidth: 130),
+                            child: METext(
+                            text: referenceNumber??'-',
+                            fontSize: 12,
+                            maxLines: 1,
+                            ),
+                          ),
+                          Visibility(
+                              visible:  !isSingleLine(referenceNumber??'',TextStyle(fontSize: 16), 200),
+                              child: GestureDetector(
+                                onLongPress : (){
+                                  controller?.showTooltip();
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 5),
+                                  child: SuperTooltip(
+                                    controller: controller,
+                                    showBarrier: true,
+                                    barrierColor: Colors.transparent,
+                                    shadowColor: Pallets.navy40.withOpacity(0.5),
+                                    content: METext(text: referenceNumber??''),
+                                    child: Container(
+                                      child: Icon(MceasyIcons.outline_info, size: 15)
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               )
             ],
           ),
