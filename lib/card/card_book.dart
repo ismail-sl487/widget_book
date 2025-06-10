@@ -26,6 +26,7 @@ class CardStyler {
                 Center(child: MECard(
                 widget: 
                   ContentCardFO(
+                      controller: p0.knobs.superTooltipController(label: "controller"),
                       foNumber: p0.knobs.string(label: "foNumber",initialValue: "FO-0001"),
                       statusLabel: p0.knobs.string(label: "statusLabel",initialValue: "Perjalanan"),
                       statusBGColor: p0.knobs.list(
