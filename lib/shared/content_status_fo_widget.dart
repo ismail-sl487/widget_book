@@ -22,6 +22,7 @@ class ContentCardFO extends StatelessWidget {
     this.referenceNumber,
     this.origin,
     this.originMaxLine,
+    this.maxWidth = 200,
   });
 
   final String? foNumber;
@@ -32,6 +33,7 @@ class ContentCardFO extends StatelessWidget {
   final int? originMaxLine;
   final SuperTooltipController? controller;
   final String? referenceNumber;
+  final double maxWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +92,9 @@ class ContentCardFO extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  METext(text: "Waktu Keberangkatan",color: Color(0xFF344264)),
-                  SizedBox(height: 8,),
-                  METext(text: depatureTime??'',fontSize: 14,color: Color(0xFF01133D))
+                  const METext(text: "Waktu Keberangkatan",color: Color(0xFF344264)),
+                  const SizedBox(height: 8,),
+                  METext(text: depatureTime??'',fontSize: 14,color: const Color(0xFF01133D))
                 ],
               ),
               const SizedBox(width: 10,),
@@ -100,8 +102,8 @@ class ContentCardFO extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    METext(text: "Shipment Ref",color: Color(0xFF344264)),
-                    SizedBox(height: 8,),
+                    const METext(text: "Shipment Ref",color: Color(0xFF344264)),
+                    const SizedBox(height: 8,),
                     IntrinsicWidth(
                       child: Align(
                         alignment: Alignment.center,
@@ -112,7 +114,7 @@ class ContentCardFO extends StatelessWidget {
                           children: [
                           Expanded(
                             child: Container(
-                              constraints: BoxConstraints(maxWidth: 130),
+                              constraints: BoxConstraints(maxWidth: maxWidth),
                               child: METext(
                               text: referenceNumber??'-',
                               fontSize: 12,
@@ -121,7 +123,7 @@ class ContentCardFO extends StatelessWidget {
                             ),
                           ),
                           Visibility(
-                              visible:  !isSingleLine(referenceNumber??'',TextStyle(fontSize: 16), 200),
+                              visible:  !isSingleLine(referenceNumber??'',const TextStyle(fontSize: 16), maxWidth),
                               child: GestureDetector(
                                 onLongPress : (){
                                   controller?.showTooltip();
@@ -135,7 +137,7 @@ class ContentCardFO extends StatelessWidget {
                                     shadowColor: Pallets.navy40.withOpacity(0.5),
                                     content: METext(text: referenceNumber??''),
                                     child: Container(
-                                      child: Icon(MceasyIcons.outline_info, size: 15)
+                                      child: const Icon(MceasyIcons.outline_info, size: 15)
                                     ),
                                   ),
                                 ),
